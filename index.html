@@ -13,6 +13,19 @@
 </head>
 <body>
 
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <span class="lang-label">Language</span>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="es">ES</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="fa">فارسی</button>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">
@@ -34,13 +47,6 @@
       <a href="locations.html" data-i18n="nav.locations">Locations</a>
       <a href="contact.html" class="cta-pill" data-i18n="nav.cta">Contact Us</a>
     </nav>
-    <div class="lang-toggle" role="group" aria-label="Language selector">
-      <button type="button" data-lang="en" class="active">EN</button>
-      <span class="sep">|</span>
-      <button type="button" data-lang="es">ES</button>
-      <span class="sep">|</span>
-      <button type="button" data-lang="fa">فارسی</button>
-    </div>
   </div>
 </header>
 
@@ -48,9 +54,7 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-copy">
-        <span class="section-head" style="display:inline-block; padding:0;">
-          <span class="eyebrow" data-i18n="hero.eyebrow">CARE DESIGNED AROUND YOUR COMMUNICATION AND LIFESTYLE NEEDS</span>
-        </span>
+        <span class="eyebrow" data-i18n="hero.eyebrow">CARE DESIGNED AROUND YOUR COMMUNICATION AND LIFESTYLE NEEDS</span>
         <h1 data-i18n="hero.h1">Better hearing, restored quiet, and a calmer life.</h1>
         <span class="hero-kicker" data-i18n="hero.kicker">Concierge care designed to deliver benefits.</span>
         <p class="hero-lede" data-i18n="hero.lede">
@@ -68,29 +72,57 @@
   </div>
 </section>
 
-<section class="tight">
+<section class="cred-ribbon">
   <div class="wrap">
-    <div class="trust-grid trust-strip" style="border:none; background:transparent; padding:0;">
-      <div class="trust-item">
-        <img src="assets/img/whos-who.png" alt="Marquis Who's Who 2025 honored listee">
-        <p>Marquis Who's Who 2025</p>
+    <div class="cred-ribbon-grid">
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Marquis Who's Who</div>
+          <div class="cred-sub">2025 Honored Listee</div>
+        </div>
       </div>
-      <div class="trust-item">
-        <p style="font-family:Lora,serif; font-size:1.2rem; color:var(--brown);">Au.D., CH-TM, CBIS</p>
-        <p>Doctor of Audiology</p>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Au.D., CH-TM, CBIS</div>
+          <div class="cred-sub">Doctor of Audiology</div>
+        </div>
       </div>
-      <div class="trust-item">
-        <p style="font-family:Lora,serif; font-size:1.2rem; color:var(--brown);">Designated</p>
-        <p>Lenire Tinnitus Provider</p>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0v6a6 6 0 0 1-12 0z"/><path d="M9 12a3 3 0 0 1 6 0"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Designated Lenire Provider</div>
+          <div class="cred-sub">FDA-cleared tinnitus therapy</div>
+        </div>
       </div>
-      <div class="trust-item">
-        <p style="font-family:Lora,serif; font-size:1.2rem; color:var(--brown);">Since 2001</p>
-        <p>Practicing audiologist, Sherman Oaks since 2014</p>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Practicing since 2001</div>
+          <div class="cred-sub">Sherman Oaks office since 2014</div>
+        </div>
       </div>
-      <div class="trust-item">
-        <p style="font-family:Lora,serif; font-size:1.2rem; color:var(--brown);">Farsi, Spanish, English</p>
-        <p>Multilingual care</p>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Farsi, Spanish, English</div>
+          <div class="cred-sub">Multilingual care, ASL by appointment</div>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="urgent-callout">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M12 2v10"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M4 20h16"/></svg></div>
+      <div class="u-body">
+        <strong>Sudden hearing change in the last 72 hours?</strong>
+        <p>Sudden sensorineural hearing loss is time-sensitive. We hold same-day slots for these cases. Call our office and mention "sudden loss."</p>
+      </div>
+      <a href="tel:8189899001" class="u-cta">Call 818-989-9001</a>
     </div>
   </div>
 </section>
@@ -104,38 +136,38 @@
     </div>
     <div class="card-grid">
       <div class="card">
-        <div class="icon">H</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0v6a6 6 0 0 1-12 0z"/><path d="M9 9v6"/></svg></div>
         <h3>Hearing Evaluations</h3>
         <p>Comprehensive diagnostic testing that goes beyond a basic screening, with results explained in plain language.</p>
       </div>
       <div class="card">
-        <div class="icon">A</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 12c0-4 3-7 7-7s7 3 7 7v3a4 4 0 0 1-4 4h-1v-4"/><circle cx="8" cy="16" r="2"/></svg></div>
         <h3>Advanced Hearing Aids</h3>
         <p>Lyric extended-wear, premium prescription devices, and real-world fitting verification with real-ear measurement.</p>
       </div>
       <div class="card">
-        <div class="icon">T</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-4 3 8 2-5 2 3h6"/></svg></div>
         <h3>Tinnitus Treatment</h3>
         <p>Designated Lenire provider, plus Levo and Neuromonics therapies. A complete tinnitus program, not a single device.</p>
       </div>
       <div class="card">
-        <div class="icon">C</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v6c0 4.5-3.5 7-8 8-4.5-1-8-3.5-8-8V7z"/></svg></div>
         <h3>Hearing Conservation</h3>
         <p>Custom protection for musicians, first responders, shooters, and anyone who works in loud environments.</p>
       </div>
       <div class="card">
-        <div class="icon">V</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="10" rx="1"/><path d="M17 9l4-2v6l-4-2"/><path d="M6 19h8"/></svg></div>
         <h3>Telehealth Visits</h3>
         <p>Follow-up appointments, fine-tuning, and counseling available remotely when an in-office visit is not needed.</p>
       </div>
       <div class="card">
-        <div class="icon">R</div>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
         <h3>Second Opinions</h3>
         <p>A careful review of prior testing, hearing aid programming, and treatment plans, with clear next steps.</p>
       </div>
     </div>
     <div style="text-align:center; margin-top:2.5rem;">
-      <a href="services.html" class="btn btn-ghost">See All Services</a>
+      <a href="services.html" class="btn btn-ghost">See All Areas of Expertise</a>
     </div>
   </div>
 </section>
@@ -145,11 +177,12 @@
     <div class="section-head" style="margin-bottom:2rem;">
       <span class="eyebrow">Trusted Brand Partners</span>
       <h2>Technology from the manufacturers we trust most.</h2>
+      <p>Prescriptions are matched to your case, not a default line. We fit and verify with real-ear measurement.</p>
     </div>
     <div class="brand-strip">
-      <img src="assets/img/starkey.png" alt="Starkey hearing technology logo">
-      <img src="assets/img/widex.png" alt="Widex hearing technology logo">
-      <img src="assets/img/oticon.png" alt="Oticon hearing technology logo">
+      <img src="assets/img/starkey.png" alt="Starkey hearing technology">
+      <img src="assets/img/widex.png" alt="Widex hearing technology">
+      <img src="assets/img/oticon.png" alt="Oticon hearing technology">
     </div>
   </div>
 </section>
@@ -164,7 +197,7 @@
         <span class="eyebrow" style="color:var(--primary-deep); font-weight:600; text-transform:uppercase; letter-spacing:0.12em; font-size:0.82rem;">Meet Your Audiologist</span>
         <h2>Shahrzad Cohen, Au.D., CH-TM, CBIS</h2>
         <p class="creds" style="color:var(--brown-light); font-style:italic; margin-bottom:1.2rem;">
-          Doctor of Audiology, Certified in Tinnitus Management, Certified Brain Injury Specialist.
+          Doctor of Audiology. Certified in Tinnitus Management. Certified Brain Injury Specialist.
         </p>
         <p>
           Dr. Cohen has built her Sherman Oaks practice around a simple idea: hearing care should feel personal, unhurried, and grounded in evidence. She blends clinical precision with warm communication so patients understand every option before they choose one.
@@ -173,6 +206,59 @@
           She is a designated Lenire tinnitus provider, a 2025 Marquis Who's Who honored listee, and an active educator who lectures on tinnitus, hearing loss, and brain injury-related auditory issues.
         </p>
         <a href="providers.html" class="alt-link">Meet Dr. Cohen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">More Ways We Support You</span>
+      <h2>Concierge care extends beyond the office.</h2>
+    </div>
+    <div class="feature-strip">
+      <div class="feature-block">
+        <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-6 4 12 3-9 2 5h4"/></svg></div>
+        <div>
+          <h4>Mobile Hearing Clinic</h4>
+          <p>Dr. Cohen visits your home for full evaluation, fitting, and follow-up when travel is difficult. Available across the greater Los Angeles area.</p>
+        </div>
+      </div>
+      <div class="feature-block">
+        <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div>
+        <div>
+          <h4>Same-day appointment starts</h4>
+          <p>When a diagnostic and immediate treatment plan can be combined, we work to start same-day so you leave with a path forward.</p>
+        </div>
+      </div>
+      <div class="feature-block">
+        <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg></div>
+        <div>
+          <h4>VIP Program</h4>
+          <p>Ongoing care membership with priority scheduling, annual clean and check appointments, and warranty tracking. Ask us for details.</p>
+        </div>
+      </div>
+      <div class="feature-block">
+        <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></div>
+        <div>
+          <h4>Financing options</h4>
+          <p>CareCredit accepted. We provide itemized super bills for possible out-of-network reimbursement from your insurer.</p>
+        </div>
+      </div>
+      <div class="feature-block">
+        <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-6 4 2 8-6-4-6 4 2-8-6-4h7z"/></svg></div>
+        <div>
+          <h4>Military and first responder appreciation</h4>
+          <p>Reduced pricing on select devices and program packages for active-duty military, veterans, and first responders. Verification requested at consultation.</p>
+        </div>
+      </div>
+      <div class="feature-block">
+        <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 21c-4-4-8-7-8-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 8-8 12z"/></svg></div>
+        <div>
+          <h4>Weekend appointments</h4>
+          <p>Saturday and Sunday appointments available by request. Reach our office to schedule.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -187,25 +273,25 @@
     </div>
     <div class="card-grid">
       <div class="card">
-        <div class="icon">1</div>
+        <div class="step">1</div>
         <h3>Guided progress through the healing journey</h3>
         <p>A full conversation about your hearing history, lifestyle, work, and the moments that matter most to you, followed by clear next steps at every stage of care.</p>
       </div>
       <div class="card">
-        <div class="icon">2</div>
+        <div class="step">2</div>
         <h3>Personalized Approach</h3>
         <p>Comprehensive audiologic evaluation, tinnitus assessment when indicated, and a clear written summary you keep, tailored to how you actually live and listen.</p>
       </div>
       <div class="card">
-        <div class="icon">3</div>
-        <h3>Expertise & Experience</h3>
+        <div class="step">3</div>
+        <h3>Expertise and Experience</h3>
         <p>We review every option, including doing nothing, and choose the path that fits your goals and budget, backed by decades of clinical training.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cream">
+<section>
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">See What Our Patients Say</span>

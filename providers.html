@@ -13,6 +13,20 @@
 </head>
 <body>
 
+
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <span class="lang-label">Language</span>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="es">ES</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="fa">فارسی</button>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">
@@ -224,6 +238,7 @@
     </div>
   </div>
 </footer>
+<script src="assets/js/i18n.js"></script>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

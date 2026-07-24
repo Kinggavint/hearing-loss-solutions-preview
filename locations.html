@@ -13,6 +13,20 @@
 </head>
 <body>
 
+
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <span class="lang-label">Language</span>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="es">ES</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="fa">فارسی</button>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">
@@ -67,12 +81,12 @@
         <div class="row"><span class="label">Address</span><span class="value">5900 Sepulveda Boulevard<br>Suite 335<br>Sherman Oaks, CA 91411</span></div>
         <div class="row"><span class="label">Phone</span><span class="value"><a href="tel:8189899001">818-989-9001</a></span></div>
         <div class="row"><span class="label">Email</span><span class="value"><a href="mailto:admin@hearinglosssolutions.com">admin@hearinglosssolutions.com</a></span></div>
-        <div class="row"><span class="label">Hours</span><span class="value">Mon to Thu: 9:00 to 5:00<br>Fri: 9:00 to 4:00</span></div>
+        <div class="row"><span class="label">Hours</span><span class="value">Mon to Thu: 9:00 to 5:00<br>Fri: 9:00 to 4:00<br><span style="color:var(--muted); font-size:0.88rem;">Saturday and Sunday appointments available on request</span></span></div>
         <div class="row"><span class="label">Parking</span><span class="value">Parking available in the building structure.</span></div>
       </div>
       <div class="map-wrap">
-        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=5900+Sepulveda+Blvd+Suite+335,+Sherman+Oaks,+CA+91411&output=embed"></iframe>
+        <iframe title="Sherman Oaks office map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+          src="https://maps.google.com/maps?q=5900%20Sepulveda%20Blvd%20Suite%20335%20Sherman%20Oaks%20CA%2091411&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
       </div>
     </div>
   </div>
@@ -177,6 +191,7 @@
     </div>
   </div>
 </footer>
+<script src="assets/js/i18n.js"></script>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

@@ -13,6 +13,20 @@
 </head>
 <body>
 
+
+<div class="lang-bar">
+  <div class="lang-bar-inner">
+    <span class="lang-label">Language</span>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="es">ES</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="fa">فارسی</button>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">
@@ -53,7 +67,7 @@
           <h3>Contact Us</h3>
           <div class="row"><span class="label">Phone</span><span class="value"><a href="tel:8189899001">818-989-9001</a></span></div>
           <div class="row"><span class="label">Email</span><span class="value"><a href="mailto:admin@hearinglosssolutions.com">admin@hearinglosssolutions.com</a></span></div>
-          <div class="row"><span class="label">Hours</span><span class="value">Mon to Thu: 9:00 to 5:00<br>Fri: 9:00 to 4:00</span></div>
+          <div class="row"><span class="label">Hours</span><span class="value">Mon to Thu: 9:00 to 5:00<br>Fri: 9:00 to 4:00<br><span style="color:var(--muted); font-size:0.88rem;">Saturday and Sunday appointments available on request</span></span></div>
           <div class="row"><span class="label">Address</span><span class="value">5900 Sepulveda Boulevard, Suite 335<br>Sherman Oaks, CA 91411</span></div>
         </div>
         <div class="card" style="margin-top:1.5rem;">
@@ -79,6 +93,9 @@
                 <option>Hearing evaluation</option>
                 <option>Tinnitus consultation</option>
                 <option>Lenire treatment</option>
+                <option>Mobile visit</option>
+                <option>Musician hearing care</option>
+                <option>Medical-legal evaluation</option>
                 <option>Hearing aids</option>
                 <option>Hearing protection</option>
                 <option>Second opinion</option>
@@ -143,6 +160,7 @@
     </div>
   </div>
 </footer>
+<script src="assets/js/i18n.js"></script>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
