@@ -26,14 +26,21 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="primary">
-      <a href="index.html">Home</a>
-      <a href="providers.html">Provider</a>
-      <a href="services.html">Services</a>
-      <a href="conditions.html">Conditions</a>
-      <a href="resources.html">Resources</a>
-      <a href="locations.html">Location</a>
-      <a href="contact.html" class="cta-pill">Schedule a Visit</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="providers.html" data-i18n="nav.team">Team</a>
+      <a href="services.html" data-i18n="nav.services">Areas of Expertise</a>
+      <a href="conditions.html" data-i18n="nav.conditions">Conditions</a>
+      <a href="resources.html" data-i18n="nav.resources">Resources</a>
+      <a href="locations.html" data-i18n="nav.locations">Locations</a>
+      <a href="contact.html" class="cta-pill" data-i18n="nav.cta">Contact Us</a>
     </nav>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button type="button" data-lang="en" class="active">EN</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="es">ES</button>
+      <span class="sep">|</span>
+      <button type="button" data-lang="fa">فارسی</button>
+    </div>
   </div>
 </header>
 
@@ -42,15 +49,16 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <span class="section-head" style="display:inline-block; padding:0;">
-          <span class="eyebrow">Sherman Oaks Concierge Audiology</span>
+          <span class="eyebrow" data-i18n="hero.eyebrow">CARE DESIGNED AROUND YOUR COMMUNICATION AND LIFESTYLE NEEDS</span>
         </span>
-        <h1>Better hearing, restored quiet, and a calmer life.</h1>
-        <p class="hero-lede">
+        <h1 data-i18n="hero.h1">Better hearing, restored quiet, and a calmer life.</h1>
+        <span class="hero-kicker" data-i18n="hero.kicker">Concierge care designed to deliver benefits.</span>
+        <p class="hero-lede" data-i18n="hero.lede">
           Dr. Shahrzad Cohen has guided patients across Southern California through hearing loss and tinnitus since 2001, blending personalized care, advanced technology, and the time every appointment deserves.
         </p>
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
-          <a href="services.html" class="btn btn-ghost">Explore Our Care</a>
+          <a href="contact.html" class="btn btn-primary" data-i18n="hero.cta.primary">Schedule a Consultation</a>
+          <a href="services.html" class="btn btn-ghost" data-i18n="hero.cta.secondary">Explore Our Care</a>
         </div>
       </div>
       <div class="hero-img">
@@ -132,6 +140,20 @@
   </div>
 </section>
 
+<section class="tight">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:2rem;">
+      <span class="eyebrow">Trusted Brand Partners</span>
+      <h2>Technology from the manufacturers we trust most.</h2>
+    </div>
+    <div class="brand-strip">
+      <img src="assets/img/starkey.png" alt="Starkey hearing technology logo">
+      <img src="assets/img/widex.png" alt="Widex hearing technology logo">
+      <img src="assets/img/oticon.png" alt="Oticon hearing technology logo">
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="two-col">
@@ -159,26 +181,52 @@
 <section class="warm">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">A Different Kind of Visit</span>
+      <span class="eyebrow">Hearing Healthcare Continuum</span>
       <h2>Concierge care, out-of-network by design.</h2>
       <p>We are an out-of-network practice. That choice lets us spend the time each patient needs, fit technology rigorously, and follow through long after the device arrives. We provide super bills you can submit to your insurance for possible reimbursement.</p>
     </div>
     <div class="card-grid">
       <div class="card">
         <div class="icon">1</div>
-        <h3>Listen First</h3>
-        <p>A full conversation about your hearing history, lifestyle, work, and the moments that matter most to you.</p>
+        <h3>Guided progress through the healing journey</h3>
+        <p>A full conversation about your hearing history, lifestyle, work, and the moments that matter most to you, followed by clear next steps at every stage of care.</p>
       </div>
       <div class="card">
         <div class="icon">2</div>
-        <h3>Test Thoroughly</h3>
-        <p>Comprehensive audiologic evaluation, tinnitus assessment when indicated, and a clear written summary you keep.</p>
+        <h3>Personalized Approach</h3>
+        <p>Comprehensive audiologic evaluation, tinnitus assessment when indicated, and a clear written summary you keep, tailored to how you actually live and listen.</p>
       </div>
       <div class="card">
         <div class="icon">3</div>
-        <h3>Plan Together</h3>
-        <p>We review every option, including doing nothing, and choose the path that fits your goals and budget.</p>
+        <h3>Expertise & Experience</h3>
+        <p>We review every option, including doing nothing, and choose the path that fits your goals and budget, backed by decades of clinical training.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">See What Our Patients Say</span>
+      <h2>Real stories from real patients.</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p class="quote">"Dr. Cohen is an amazing audiologist who not only looks at the technical side of hearing, but understands how hearing effects behavior. Her knowledge of auditory processing disorder is impressive."</p>
+        <p class="attribution">Bonnie W.</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"The mobile clinic came to my home and made everything simple for my mother. Dr. Cohen took her time and explained every step."</p>
+        <p class="attribution">J.R., adult child of patient</p>
+      </div>
+      <div class="testimonial-card">
+        <p class="quote">"The Lenire program has been life-changing for my tinnitus. I sleep through the night for the first time in years."</p>
+        <p class="attribution">Sherman Oaks patient</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="providers.html#testimonials" class="alt-link">Read more patient stories on our Team page</a>
     </div>
   </div>
 </section>
@@ -188,7 +236,7 @@
     <div class="cta-band">
       <h2>Ready to hear the people you love again?</h2>
       <p>Schedule a consultation with Dr. Cohen. We will listen, test carefully, and walk you through every option so you can choose with confidence.</p>
-      <a href="contact.html" class="btn btn-primary">Book Your Visit</a>
+      <a href="contact.html" class="btn btn-primary" data-i18n="footer.cta">Book Your Visit</a>
     </div>
   </div>
 </section>
@@ -203,7 +251,7 @@
       <div>
         <h4>Care</h4>
         <ul>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="services.html">Areas of Expertise</a></li>
           <li><a href="conditions.html">Conditions</a></li>
           <li><a href="resources.html">Patient Resources</a></li>
         </ul>
@@ -211,8 +259,8 @@
       <div>
         <h4>Practice</h4>
         <ul>
-          <li><a href="providers.html">Provider</a></li>
-          <li><a href="locations.html">Location</a></li>
+          <li><a href="providers.html">Team</a></li>
+          <li><a href="locations.html">Locations</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -225,12 +273,22 @@
           <li><a href="mailto:admin@hearinglosssolutions.com">admin@hearinglosssolutions.com</a></li>
         </ul>
       </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Social Media Links</a></li>
+          <li><a href="resources.html#newsletter">Join our newsletter</a></li>
+          <li><a href="mailto:admin@hearinglosssolutions.com?subject=Support%20Group%20Interest">Join our support group</a></li>
+          <li><a href="mailto:admin@hearinglosssolutions.com?subject=Team%20Application">Join our team, submit applications</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       &copy; <span id="year"></span> Hearing Loss Solutions. All rights reserved.
     </div>
   </div>
 </footer>
+<script src="assets/js/i18n.js"></script>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

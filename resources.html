@@ -10,6 +10,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css">
 <link rel="icon" href="assets/img/logo.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long is a first appointment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Plan on 60 to 90 minutes. We begin with a conversation about your history and goals, complete a full diagnostic evaluation, and then walk through findings together before you leave with a written summary." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you take insurance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We are out of network with all insurance plans. After your visit, we provide a super bill you can submit for possible reimbursement under your plan's out-of-network benefits." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a super bill and how does it work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A super bill is an itemized receipt with the diagnosis and procedure codes your insurer needs to process an out-of-network claim. You pay us directly at the time of service, then submit the super bill to your insurance plan, which may reimburse part of the cost depending on your out-of-network benefits." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Lenire program?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lenire is an FDA-cleared bimodal neuromodulation device that pairs tongue stimulation with sound therapy to retrain how the brain processes tinnitus. We are a designated Lenire treatment office, trained and certified to deliver the program correctly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you make home visits?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our mobile hearing clinic brings the full evaluation, fitting, and follow-up experience to patients who cannot travel to our Sherman Oaks office, including assisted-living communities across the Los Angeles area." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer telehealth?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Telehealth visits are available statewide for established patients, covering programming adjustments, counseling, and tinnitus program coaching. New patient testing always begins with an in-office visit." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -27,12 +65,12 @@
     </button>
     <nav class="primary">
       <a href="index.html">Home</a>
-      <a href="providers.html">Provider</a>
-      <a href="services.html">Services</a>
+      <a href="providers.html">Team</a>
+      <a href="services.html">Areas of Expertise</a>
       <a href="conditions.html">Conditions</a>
       <a href="resources.html">Resources</a>
-      <a href="locations.html">Location</a>
-      <a href="contact.html" class="cta-pill">Schedule a Visit</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html" class="cta-pill">Contact Us</a>
     </nav>
   </div>
 </header>
@@ -45,40 +83,60 @@
   </div>
 </section>
 
-<section>
+<section id="faq">
   <div class="wrap" style="max-width:820px;">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions, answered.</h2>
+      <p>Don't see what you are looking for? Get in touch with us to make suggestions.</p>
+    </div>
+
     <div class="faq-item open">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What should I expect at a first visit?</button>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long is a first appointment?</button>
       <div class="faq-a">
         Plan on 60 to 90 minutes. We begin with a conversation about your history and goals, complete a full diagnostic evaluation, and then walk through findings together. You leave with a written summary and a clear set of options. There is no pressure to make a decision in the chair.
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you take my insurance?</button>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you take insurance?</button>
       <div class="faq-a">
-        We are out of network with all insurance plans. After your visit we provide a super bill you can submit for possible reimbursement under your plan&apos;s out-of-network benefits. We are happy to explain pricing before you book.
+        We are out of network with all insurance plans. After your visit, we provide a super bill you can submit for possible reimbursement under your plan's out-of-network benefits. We are happy to explain pricing before you book.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a super bill and how does it work?</button>
+      <div class="faq-a">
+        A super bill is an itemized receipt with the diagnosis and procedure codes your insurer needs to process an out-of-network claim. You pay us directly at the time of service, then submit the super bill to your insurance plan, which may reimburse part of the cost depending on your out-of-network benefits.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Lenire program?</button>
+      <div class="faq-a">
+        Lenire is an FDA-cleared bimodal neuromodulation device that pairs tongue stimulation with sound therapy to retrain how the brain processes tinnitus. We are a designated Lenire treatment office, trained and certified to deliver the program correctly.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you make home visits?</button>
+      <div class="faq-a">
+        Yes. Our mobile hearing clinic brings the full evaluation, fitting, and follow-up experience to patients who cannot travel to our Sherman Oaks office, including assisted-living communities across the Los Angeles area.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you offer telehealth?</button>
+      <div class="faq-a">
+        Yes. Telehealth visits are available statewide for established patients, covering programming adjustments, counseling, and tinnitus program coaching. New patient testing always begins with an in-office visit.
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is there a cure for tinnitus?</button>
       <div class="faq-a">
-        There is no single cure for tinnitus, but the majority of patients experience meaningful relief with a structured, evidence-based program. Treatment plans are personalized and may combine sound therapy, devices like Lenire or Levo, counseling, and lifestyle changes.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is Lenire?</button>
-      <div class="faq-a">
-        Lenire is an FDA-cleared bimodal neuromodulation device that pairs tongue stimulation with sound therapy to retrain how the brain processes tinnitus. We are a designated treatment office, which means we are trained and certified to deliver the program correctly.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I do follow-up visits remotely?</button>
-      <div class="faq-a">
-        Yes. Telehealth follow-ups are available for programming adjustments, counseling, and check-ins so you do not need to drive in for every small change.
+        There is no single cure for tinnitus, but the majority of patients experience meaningful relief with a structured, evidence-based program. Treatment plans are personalized and may combine sound therapy, devices like Lenire, Levo, or Neuromonics, counseling, and lifestyle changes.
       </div>
     </div>
 
@@ -109,24 +167,18 @@
         Yes. Through CareCredit and other financing partners, we offer flexible monthly payment options, including zero-interest programs for qualifying patients. Ask us during your consultation for full details.
       </div>
     </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if I cannot come into the office?</button>
-      <div class="faq-a">
-        For patients who cannot travel, we offer an in-home mobile hearing clinic across the Los Angeles area, including visits to assisted-living communities. Existing patients can also use telehealth follow-up visits statewide.
-      </div>
-    </div>
   </div>
 </section>
 
-<section class="warm">
+<section class="cream" id="newsletter">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Coming Soon</span>
       <h2>A growing library of articles and lectures.</h2>
-      <p>Dr. Cohen actively teaches and publishes on tinnitus, hearing conservation, and auditory care after brain injury. New patient education resources are added regularly.</p>
+      <p>Dr. Cohen actively teaches and publishes on tinnitus, hearing conservation, and auditory care after brain injury. New patient education resources are added regularly. Join our newsletter to be notified when new articles are published.</p>
     </div>
-    <div style="text-align:center;">
+    <div style="text-align:center; display:flex; gap:0.9rem; justify-content:center; flex-wrap:wrap;">
+      <a href="mailto:admin@hearinglosssolutions.com?subject=Newsletter%20Signup" class="btn btn-primary">Join Our Newsletter</a>
       <a href="contact.html" class="btn btn-ghost">Ask a Question</a>
     </div>
   </div>
@@ -142,7 +194,7 @@
       <div>
         <h4>Care</h4>
         <ul>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="services.html">Areas of Expertise</a></li>
           <li><a href="conditions.html">Conditions</a></li>
           <li><a href="resources.html">Patient Resources</a></li>
         </ul>
@@ -150,8 +202,8 @@
       <div>
         <h4>Practice</h4>
         <ul>
-          <li><a href="providers.html">Provider</a></li>
-          <li><a href="locations.html">Location</a></li>
+          <li><a href="providers.html">Team</a></li>
+          <li><a href="locations.html">Locations</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -162,6 +214,15 @@
           <li>Sherman Oaks, CA 91411</li>
           <li><a href="tel:8189899001">818-989-9001</a></li>
           <li><a href="mailto:admin@hearinglosssolutions.com">admin@hearinglosssolutions.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Social Media Links</a></li>
+          <li><a href="resources.html#newsletter">Join our newsletter</a></li>
+          <li><a href="mailto:admin@hearinglosssolutions.com?subject=Support%20Group%20Interest">Join our support group</a></li>
+          <li><a href="mailto:admin@hearinglosssolutions.com?subject=Team%20Application">Join our team, submit applications</a></li>
         </ul>
       </div>
     </div>
