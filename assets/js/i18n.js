@@ -36,7 +36,18 @@
       "providers.tag": "Soluciones personalizadas para sus problemas de tinnitus y audicion.",
       "contact.crumb": "Contacto",
       "contact.h1": "Programe una consulta o haga una pregunta.",
-      "contact.p": "La forma mas rapida de contactarnos es por telefono. Respondemos el formulario en un dia habil."
+      "contact.p": "La forma mas rapida de contactarnos es por telefono. Respondemos el formulario en un dia habil.",
+      "mobile.eyebrow": "ATENCION QUE LLEGA A USTED",
+      "mobile.h2": "Clinica Auditiva Movil",
+      "mobile.kicker": "Venimos a usted para los servicios de audifonos.",
+      "mobile.p1": "Nuestra Clinica Auditiva Movil lleva tecnologia de diagnostico avanzada y atencion personalizada a la comodidad de su hogar, para que los pacientes con movilidad limitada puedan recibir la evaluacion, el ajuste y el seguimiento completos.",
+      "mobile.p2": "Si la perdida auditiva le ha dejado a usted o a un ser querido sintiendose aislado, esta es una de las formas mas importantes en que reconectamos a las personas con las voces y los momentos que han estado extranando. La Dra. Cohen realiza estas visitas personalmente en toda el area metropolitana de Los Angeles, incluidas comunidades de vida asistida.",
+      "mobile.li1": "Evaluacion, ajuste y seguimiento completos en casa",
+      "mobile.li2": "Equipo de diagnostico portatil avanzado",
+      "mobile.li3": "Ideal para pacientes con movilidad limitada o barreras de transporte",
+      "mobile.li4": "Disponible en toda el area metropolitana de Los Angeles, incluidas comunidades de vida asistida",
+      "mobile.cta.primary": "Programar una Visita a Domicilio",
+      "mobile.cta.secondary": "Mas Informacion"
     },
     fa: {
       "hero.eyebrow": "مراقبت متناسب با نیازهای ارتباطی و سبک زندگی شما",
@@ -70,7 +81,18 @@
       "providers.tag": "راهکارهای اختصاصی برای مشکلات وزوز گوش و شنوایی شما.",
       "contact.crumb": "تماس",
       "contact.h1": "یک مشاوره رزرو کنید یا سوالی بپرسید.",
-      "contact.p": "سریع‌ترین راه تماس با ما تلفن است. فرم زیر را در یک روز کاری پاسخ می‌دهیم."
+      "contact.p": "سریع‌ترین راه تماس با ما تلفن است. فرم زیر را در یک روز کاری پاسخ می‌دهیم.",
+      "mobile.eyebrow": "مراقبتی که به نزد شما می‌آید",
+      "mobile.h2": "کلینیک سیار شنوایی",
+      "mobile.kicker": "برای خدمات سمعک نزد شما می‌آییم.",
+      "mobile.p1": "کلینیک سیار شنوایی ما فناوری تشخیصی پیشرفته و مراقبت شخصی را به راحتی منزل شما می‌آورد، تا بیماران با تحرک محدود نیز بتوانند از ارزیابی، تنظیم و پیگیری کامل بهره‌مند شوند.",
+      "mobile.p2": "اگر کاهش شنوایی شما یا یکی از عزیزانتان را دچار احساس انزوا کرده است، این یکی از مهم‌ترین راه‌هایی است که ما افراد را دوباره با صداها و لحظاتی که از دست داده‌اند، پیوند می‌دهیم. دکتر کوهن شخصاً این ویزیت‌ها را در سراسر منطقه لس آنجلس، از جمله مراکز مراقبت با کمک، انجام می‌دهد.",
+      "mobile.li1": "ارزیابی، تنظیم و پیگیری کامل در منزل",
+      "mobile.li2": "تجهیزات تشخیصی سیار پیشرفته",
+      "mobile.li3": "مناسب برای بیماران با تحرک محدود یا موانع رفت‌وآمد",
+      "mobile.li4": "در سراسر منطقه لس آنجلس، از جمله مراکز مراقبت با کمک، در دسترس است",
+      "mobile.cta.primary": "رزرو ویزیت در منزل",
+      "mobile.cta.secondary": "بیشتر بدانید"
     }
   };
 
