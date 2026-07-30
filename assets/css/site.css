@@ -8,11 +8,11 @@
   --amber-deep: #965F1D;
   --brown: #3D2810;
   --brown-light: #5A3D18;
-  --cream: #FFF7E6;
-  --cream-warm: #F9E7C6;
+  --cream: #FDF3DF;
+  --cream-warm: #F7DDB2;
   --charcoal: #1F1A14;
   --ink: #2A241B;
-  --muted: #6F6557;
+  --muted: #5E5445;
   --line: #E8DCC4;
   --white: #FFFFFF;
   --teal: #1E7D82;
@@ -168,14 +168,16 @@ nav.primary a:hover { color: var(--primary-deep); }
 /* Hero */
 .hero {
   position: relative;
-  background: linear-gradient(135deg, #F9E7C6 0%, #F5D9A8 55%, #F9E7C6 100%);
+  background: linear-gradient(140deg, #FCEAC7 0%, #F3CB8C 46%, #EBB86F 100%);
   overflow: hidden;
 }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 82% 22%, rgba(198, 122, 44, 0.24), transparent 60%);
+  background:
+    radial-gradient(circle at 84% 18%, rgba(229, 104, 32, 0.32), transparent 60%),
+    radial-gradient(circle at 8% 92%, rgba(30, 125, 130, 0.16), transparent 55%);
   pointer-events: none;
 }
 .hero-kicker {
