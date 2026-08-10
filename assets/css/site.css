@@ -2042,89 +2042,148 @@ textarea:focus-visible {
 nav.primary a.current, nav.primary .nav-group-btn.current { color: var(--orange-text); }
 h1, h2 { color: var(--primary-deep); }
 
-/* --- Rotating hero -------------------------------------------------------
-   Dr. Cohen likes the rotating banner on her live site. That one bakes every
-   headline into a JPEG, so none of it is indexable. Here the slides are stacked
-   in one grid cell: all six stay in the DOM (crawlable) while only the active
-   one is visible, and the container height is the tallest slide so nothing
-   jumps as it rotates. */
-.hero-slides { display: grid; }
+
+/* --- Rotating hero (full-bleed, horizontal slide) ------------------------
+   Dr. Cohen likes the rotating banner on her live site. Hers bakes every
+   headline into a JPEG, so none of it is indexable. Here each slide is real
+   text with a real link; all six stay in the DOM and the track slides
+   horizontally, so the copy remains crawlable.
+   Full-bleed: the photo runs to the right edge of the window while the copy
+   stays aligned to the page container. */
+.hero {
+  padding: 0;
+  overflow: hidden;
+}
+.hero-viewport { overflow: hidden; width: 100%; }
+.hero-track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.62s cubic-bezier(0.4, 0.02, 0.2, 1);
+}
 .hero-slide {
-  grid-area: 1 / 1;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(8px);
-  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease), visibility 0s linear 0.55s;
+  flex: 0 0 100%;
+  min-width: 100%;
 }
-.hero-slide.is-active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: none;
-  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease), visibility 0s;
-}
-/* Before the script runs, show only the first slide so there is no flash of
-   six stacked heroes. */
+/* Before JS runs, only the first slide should be visible. */
+html:not(.js) .hero-track { display: block; }
 html:not(.js) .hero-slide:not(.is-active) { display: none; }
 
+[data-hero-rotator] .hero-grid {
+  display: grid;
+  grid-template-columns: 1.02fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  padding: 0;
+  min-height: clamp(430px, 46vw, 610px);
+}
+[data-hero-rotator] .hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Left edge lines up with the page container, but the column itself is free
+     to grow so the photo can bleed off the right of the window. */
+  padding: clamp(2.5rem, 4vw, 3.75rem) clamp(2rem, 4vw, 3.5rem)
+           clamp(2.5rem, 4vw, 3.75rem) max(1.5rem, calc((100vw - var(--max)) / 2));
+}
+[data-hero-rotator] .hero-copy h1,
+[data-hero-rotator] .hero-copy h2 {
+  max-width: 17ch;
+  margin-bottom: 1rem;
+}
+[data-hero-rotator] .hero-lede { max-width: 46ch; }
+
+/* Photo fills its half completely and bleeds to the window edge. */
+[data-hero-rotator] .hero-img {
+  position: relative;
+  aspect-ratio: auto;
+  border-radius: 0;
+  overflow: hidden;
+  min-height: 100%;
+}
+[data-hero-rotator] .hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+/* Soft feather where the photo meets the copy, so the join is not a hard seam. */
+[data-hero-rotator] .hero-img::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 110px;
+  background: linear-gradient(to right, var(--white), transparent);
+  z-index: 1;
+  pointer-events: none;
+}
+[data-hero-rotator] .hero-badge {
+  position: absolute;
+  left: auto; right: clamp(1rem, 3vw, 2.25rem); bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  [data-hero-rotator] .hero-grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  [data-hero-rotator] .hero-copy {
+    order: 2;
+    padding: 2rem 1.5rem 2.25rem;
+  }
+  [data-hero-rotator] .hero-img {
+    order: 1;
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+  [data-hero-rotator] .hero-img::before { display: none; }
+  [data-hero-rotator] .hero-copy h1,
+  [data-hero-rotator] .hero-copy h2 { max-width: none; }
+}
+
+/* --- Controls ------------------------------------------------------------ */
 .hero-controls {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+  padding: 1.5rem 0 clamp(1.75rem, 3vw, 2.5rem);
 }
 .hero-arrow,
 .hero-play {
-  width: 42px; height: 42px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   border: 1px solid var(--line);
   background: var(--white);
   color: var(--brown);
   display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  flex-shrink: 0;
+  cursor: pointer; flex-shrink: 0;
   transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
 }
 .hero-arrow svg, .hero-play svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .hero-play .icon-play { fill: currentColor; stroke: none; }
 .hero-arrow:hover, .hero-play:hover { background: var(--cta); color: var(--white); border-color: var(--cta); }
-.hero-arrow:focus-visible, .hero-play:focus-visible, .hero-dot:focus-visible {
-  outline: 3px solid var(--cta); outline-offset: 3px;
-}
-/* Only one of the two glyphs shows, depending on state. */
+.hero-arrow:focus-visible, .hero-play:focus-visible, .hero-dot:focus-visible { outline: 3px solid var(--cta); outline-offset: 3px; }
 .hero-play .icon-play { display: none; }
 .hero-play.is-paused .icon-pause { display: none; }
 .hero-play.is-paused .icon-play { display: block; }
 
 .hero-dots { display: flex; align-items: center; gap: 0.5rem; margin: 0 0.35rem; }
 .hero-dot {
-  width: 11px; height: 11px;
-  border-radius: 50%;
-  border: none;
-  background: #D8D2CA;
-  padding: 0;
-  cursor: pointer;
-  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+  width: 11px; height: 11px; border-radius: 50%; border: none;
+  background: #D8D2CA; padding: 0; cursor: pointer;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease), width 0.2s var(--ease);
 }
 .hero-dot:hover { background: var(--primary); }
-.hero-dot.is-active { background: var(--cta); transform: scale(1.3); }
+.hero-dot.is-active { background: var(--cta); width: 30px; border-radius: 999px; }
 
 @media (max-width: 620px) {
-  .hero-arrow { display: none; }      /* swipe + dots are enough on phones */
-  .hero-controls { gap: 0.6rem; }
+  .hero-arrow { display: none; }
+  .hero-controls { gap: 0.6rem; padding-top: 1rem; }
 }
 
-/* Anyone who has asked the OS to reduce motion gets a static hero: no
-   auto-advance (handled in JS) and no cross-fade. */
 @media (prefers-reduced-motion: reduce) {
-  .hero-slide { transition: none; transform: none; }
-}
-
-/* The controls now supply the hero's bottom spacing, and slides are stacked to
-   the tallest one, so the original bottom padding left a dead band. */
-[data-hero-rotator] .hero-grid {
-  padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
-  align-items: center;
+  .hero-track { transition: none; }
 }
