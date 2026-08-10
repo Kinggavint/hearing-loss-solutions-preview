@@ -232,6 +232,16 @@
      Populated per page; entries are global + deduped across the whole site. */
   var content = {
     es: {
+      "Why Patients Travel to See Her.": "Por Que los Pacientes Viajan para Verla.",
+      "The year Dr. Cohen began practicing audiology in Southern California": "El ano en que la Dra. Cohen comenzo a ejercer la audiologia en el sur de California",
+      "Languages spoken in the office: English, Spanish, and Farsi": "Idiomas que se hablan en la consulta: ingles, espanol y farsi",
+      "Minutes set aside for your first comprehensive evaluation": "Minutos reservados para su primera evaluacion completa",
+      "Tinnitus therapies offered, including FDA-cleared Lenire": "Terapias para el tinnitus disponibles, incluida Lenire autorizada por la FDA",
+      "Diagnostic and treatment plan combined where possible, so you leave with a path forward.": "Diagnostico y plan de tratamiento combinados cuando es posible, para que salga con un camino claro.",
+      "Priority scheduling, annual clean and check, and warranty tracking.": "Citas prioritarias, limpieza y revision anual, y seguimiento de la garantia.",
+      "CareCredit accepted, plus itemized super bills for out-of-network reimbursement.": "Aceptamos CareCredit, ademas de facturas detalladas para el reembolso fuera de la red.",
+      "Reduced pricing on select devices for active-duty military, veterans, and first responders.": "Precios reducidos en dispositivos seleccionados para militares en servicio activo, veteranos y socorristas.",
+      "Saturday and Sunday appointments available by request.": "Citas disponibles sabado y domingo a solicitud.",
       "Lenire is the first FDA-cleared bimodal neuromodulation device for tinnitus, combining sound with gentle stimulation of the tongue. Dr. Cohen is a designated Lenire provider and builds it into a complete tinnitus program, alongside Levo and Neuromonics, rather than handing you a single device.": "Lenire es el primer dispositivo de neuromodulacion bimodal autorizado por la FDA para el tinnitus, y combina sonido con una suave estimulacion de la lengua. La Dra. Cohen es proveedora designada de Lenire y lo integra en un programa completo de tinnitus, junto con Levo y Neuromonics, en lugar de entregarle un solo dispositivo.",
       "TINNITUS CARE": "ATENCION DEL TINNITUS",
       "Do You Suffer From Ringing in Your Ears?": "Sufre de Zumbido en los Oidos?",
@@ -1044,6 +1054,16 @@
       "Schedule a consultation with Dr. Cohen. We will listen, test carefully, and walk you through every option so you can choose with confidence.": "Programe una consulta con la Dra. Cohen. Le escucharemos, evaluaremos con cuidado y le explicaremos cada opcion para que pueda elegir con confianza."
     },
     fa: {
+      "Why Patients Travel to See Her.": "چرا بیماران برای دیدن او سفر می‌کنند.",
+      "The year Dr. Cohen began practicing audiology in Southern California": "سالی که دکتر کوهن کار شنوایی‌شناسی را در جنوب کالیفرنیا آغاز کرد",
+      "Languages spoken in the office: English, Spanish, and Farsi": "زبان‌های رایج در مطب: انگلیسی، اسپانیایی و فارسی",
+      "Minutes set aside for your first comprehensive evaluation": "دقایقی که برای نخستین ارزیابی جامع شما کنار گذاشته می‌شود",
+      "Tinnitus therapies offered, including FDA-cleared Lenire": "درمان‌های وزوز گوش ارائه‌شده، از جمله Lenire با تأیید FDA",
+      "Diagnostic and treatment plan combined where possible, so you leave with a path forward.": "تشخیص و برنامه درمان در صورت امکان یکجا انجام می‌شود تا با مسیری روشن مطب را ترک کنید.",
+      "Priority scheduling, annual clean and check, and warranty tracking.": "نوبت‌دهی اولویت‌دار، تمیزکاری و بررسی سالانه، و پیگیری گارانتی.",
+      "CareCredit accepted, plus itemized super bills for out-of-network reimbursement.": "CareCredit پذیرفته می‌شود، به‌همراه صورت‌حساب‌های تفکیکی برای بازپرداخت خارج از شبکه.",
+      "Reduced pricing on select devices for active-duty military, veterans, and first responders.": "قیمت کمتر برای دستگاه‌های منتخب ویژه نظامیان شاغل، جانبازان و امدادگران.",
+      "Saturday and Sunday appointments available by request.": "نوبت‌های شنبه و یکشنبه بنا به درخواست موجود است.",
       "Lenire is the first FDA-cleared bimodal neuromodulation device for tinnitus, combining sound with gentle stimulation of the tongue. Dr. Cohen is a designated Lenire provider and builds it into a complete tinnitus program, alongside Levo and Neuromonics, rather than handing you a single device.": "Lenire نخستین دستگاه نورومدولاسیون دوحالته دارای تأیید FDA برای وزوز گوش است و صدا را با تحریک ملایم زبان ترکیب می‌کند. دکتر کوهن ارائه‌دهنده رسمی Lenire است و آن را در کنار Levo و Neuromonics در یک برنامه کامل درمان وزوز گوش به کار می‌گیرد، نه به‌عنوان یک دستگاه تنها.",
       "TINNITUS CARE": "مراقبت وزوز گوش",
       "Do You Suffer From Ringing in Your Ears?": "آیا از زنگ‌زدن گوش رنج می‌برید؟",
@@ -1869,7 +1889,7 @@
       .trim();
   }
 
-  var CONTENT_SEL = "section h1, section h2, section h3, section h4, section p, section .checklist li, section .eyebrow, .hero-kicker, .quote, blockquote, .attribution, .cred-title, .cred-sub, .pull-quote, section table th, section table td, .callout-box p, section .alt-link, .urgent-callout strong, .urgent-callout p, .contact-card h3, .contact-card .label, .faq-q, .faq-a";
+  var CONTENT_SEL = "section h1, section h2, section h3, section h4, section p, section .checklist li, section .eyebrow, .hero-kicker, .quote, blockquote, .attribution, .cred-title, .cred-sub, .pull-quote, section table th, section table td, .callout-box p, section .alt-link, .urgent-callout strong, .urgent-callout p, .contact-card h3, .contact-card .label, .faq-q, .faq-a, .stat-label, .feature-block h4, .feature-block p";
   var origHTML = new WeakMap();
 
   function applyContent(lang) {
