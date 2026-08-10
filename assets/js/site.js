@@ -387,6 +387,103 @@
     });
   }
 
+  /* Rotating hero.
+     Dr. Cohen asked for the rotating banner she has on her live site. That one
+     is an image slider - every headline is baked into a JPEG, so search engines
+     see none of it. This keeps all six slides in the DOM as real text and only
+     toggles visibility, so the copy stays crawlable.
+
+     Auto-advance stops on hover, on keyboard focus, when the tab is hidden, and
+     when the visitor presses pause. It never starts at all if the visitor has
+     asked for reduced motion (WCAG 2.2.2 - a 7 second carousel the user cannot
+     stop is a real accessibility failure, and this audience skews 60+). */
+  function initHeroRotator() {
+    var root = document.querySelector("[data-hero-rotator]");
+    if (!root) return;
+
+    var slides = [].slice.call(root.querySelectorAll("[data-hero-slide]"));
+    var dots = [].slice.call(root.querySelectorAll("[data-hero-dot]"));
+    var prev = root.querySelector("[data-hero-prev]");
+    var next = root.querySelector("[data-hero-next]");
+    var toggle = root.querySelector("[data-hero-toggle]");
+    if (slides.length < 2) return;
+
+    var DELAY = 7000;                       // matches the cadence she is used to
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var i = 0, timer = null, paused = reduce, hovering = false;
+
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) {
+        var on = k === i;
+        s.classList.toggle("is-active", on);
+        if (on) { s.removeAttribute("aria-hidden"); }
+        else { s.setAttribute("aria-hidden", "true"); }
+      });
+      dots.forEach(function (d, k) {
+        d.classList.toggle("is-active", k === i);
+        if (k === i) { d.setAttribute("aria-current", "true"); }
+        else { d.removeAttribute("aria-current"); }
+      });
+    }
+
+    function tick() { show(i + 1); }
+    function start() {
+      stop();
+      if (paused || hovering || document.hidden) return;
+      timer = setInterval(tick, DELAY);
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    function setPaused(state) {
+      paused = state;
+      if (toggle) {
+        toggle.classList.toggle("is-paused", state);
+        toggle.setAttribute("aria-label", state
+          ? "Resume automatic slide rotation"
+          : "Pause automatic slide rotation");
+      }
+      start();
+    }
+
+    if (prev) prev.addEventListener("click", function () { show(i - 1); start(); });
+    if (next) next.addEventListener("click", function () { show(i + 1); start(); });
+    dots.forEach(function (d, k) {
+      d.addEventListener("click", function () { show(k); start(); });
+    });
+    if (toggle) toggle.addEventListener("click", function () { setPaused(!paused); });
+
+    root.addEventListener("mouseenter", function () { hovering = true; stop(); });
+    root.addEventListener("mouseleave", function () { hovering = false; start(); });
+    root.addEventListener("focusin", function () { hovering = true; stop(); });
+    root.addEventListener("focusout", function () {
+      if (!root.contains(document.activeElement)) { hovering = false; start(); }
+    });
+    document.addEventListener("visibilitychange", start);
+
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { show(i - 1); start(); }
+      if (e.key === "ArrowRight") { show(i + 1); start(); }
+    });
+
+    // Touch swipe. Horizontal only, so vertical page scrolling is untouched.
+    var x0 = null, y0 = null;
+    root.addEventListener("touchstart", function (e) {
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, { passive: true });
+    root.addEventListener("touchend", function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      var dy = e.changedTouches[0].clientY - y0;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) { show(i + (dx < 0 ? 1 : -1)); start(); }
+      x0 = y0 = null;
+    }, { passive: true });
+
+    if (reduce && toggle) setPaused(true);
+    show(0);
+    start();
+  }
+
   function ready(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -400,6 +497,7 @@
     initNav();
     initReveal();
     initCarousel();
+    initHeroRotator();
     initHearingCheck();
     initFaq();
     var yearEl = document.getElementById("year");

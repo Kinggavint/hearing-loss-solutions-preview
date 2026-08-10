@@ -2041,3 +2041,90 @@ textarea:focus-visible {
 .brand, .brand:hover { color: var(--brown); }
 nav.primary a.current, nav.primary .nav-group-btn.current { color: var(--orange-text); }
 h1, h2 { color: var(--primary-deep); }
+
+/* --- Rotating hero -------------------------------------------------------
+   Dr. Cohen likes the rotating banner on her live site. That one bakes every
+   headline into a JPEG, so none of it is indexable. Here the slides are stacked
+   in one grid cell: all six stay in the DOM (crawlable) while only the active
+   one is visible, and the container height is the tallest slide so nothing
+   jumps as it rotates. */
+.hero-slides { display: grid; }
+.hero-slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease), visibility 0s linear 0.55s;
+}
+.hero-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease), visibility 0s;
+}
+/* Before the script runs, show only the first slide so there is no flash of
+   six stacked heroes. */
+html:not(.js) .hero-slide:not(.is-active) { display: none; }
+
+.hero-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+}
+.hero-arrow,
+.hero-play {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--brown);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.hero-arrow svg, .hero-play svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.hero-play .icon-play { fill: currentColor; stroke: none; }
+.hero-arrow:hover, .hero-play:hover { background: var(--cta); color: var(--white); border-color: var(--cta); }
+.hero-arrow:focus-visible, .hero-play:focus-visible, .hero-dot:focus-visible {
+  outline: 3px solid var(--cta); outline-offset: 3px;
+}
+/* Only one of the two glyphs shows, depending on state. */
+.hero-play .icon-play { display: none; }
+.hero-play.is-paused .icon-pause { display: none; }
+.hero-play.is-paused .icon-play { display: block; }
+
+.hero-dots { display: flex; align-items: center; gap: 0.5rem; margin: 0 0.35rem; }
+.hero-dot {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  border: none;
+  background: #D8D2CA;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.hero-dot:hover { background: var(--primary); }
+.hero-dot.is-active { background: var(--cta); transform: scale(1.3); }
+
+@media (max-width: 620px) {
+  .hero-arrow { display: none; }      /* swipe + dots are enough on phones */
+  .hero-controls { gap: 0.6rem; }
+}
+
+/* Anyone who has asked the OS to reduce motion gets a static hero: no
+   auto-advance (handled in JS) and no cross-fade. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { transition: none; transform: none; }
+}
+
+/* The controls now supply the hero's bottom spacing, and slides are stacked to
+   the tallest one, so the original bottom padding left a dead band. */
+[data-hero-rotator] .hero-grid {
+  padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: center;
+}
