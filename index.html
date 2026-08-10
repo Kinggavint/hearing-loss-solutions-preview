@@ -8,20 +8,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
 <link rel="icon" href="assets/img/logo.jpg">
+<meta name="theme-color" content="#3D2810">
+<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-fallback');},3000);</script>
 </head>
 <body>
 
-<div class="lang-bar">
-  <div class="lang-bar-inner">
-    <span class="lang-label">Language</span>
-    <div class="lang-toggle" role="group" aria-label="Language selector">
-      <button type="button" data-lang="en" class="active">EN</button>
-      <span class="sep">|</span>
-      <button type="button" data-lang="es">ES</button>
-      <span class="sep">|</span>
-      <button type="button" data-lang="fa">فارسی</button>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="util-bar">
+  <div class="util-bar-inner">
+    <div class="util-left">
+      <a class="util-item strong" href="tel:8189899001"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>818-989-9001</a>
+      <span class="util-sep util-address">|</span>
+      <a class="util-item util-address" href="locations.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>5900 Sepulveda Blvd, Suite 335, Sherman Oaks</a>
+      <span class="util-sep util-hours">|</span>
+      <span class="util-item util-hours"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon to Thu 9 to 5, Fri 9 to 4</span>
+    </div>
+    <div class="util-right">
+      <span class="lang-label">Language</span>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <span class="sep">|</span>
+        <button type="button" data-lang="es">ES</button>
+        <span class="sep">|</span>
+        <button type="button" data-lang="fa">&#1601;&#1575;&#1585;&#1587;&#1740;</button>
+      </div>
     </div>
   </div>
 </div>
@@ -35,20 +48,86 @@
         <span class="brand-tag">Shahrzad Cohen, Au.D.</span>
       </div>
     </a>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('nav.primary').classList.toggle('open')">
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <nav class="primary">
+    <nav class="primary" id="primary-nav" aria-label="Primary">
       <a href="index.html" data-i18n="nav.home">Home</a>
-      <a href="providers.html" data-i18n="nav.team">Team</a>
-      <a href="services.html" data-i18n="nav.services">Areas of Expertise</a>
-      <a href="conditions.html" data-i18n="nav.conditions">Conditions</a>
-      <a href="resources.html" data-i18n="nav.resources">Resources</a>
-      <a href="locations.html" data-i18n="nav.locations">Locations</a>
-      <a href="contact.html" class="cta-pill" data-i18n="nav.cta">Contact Us</a>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.about">About</button>
+        <div class="nav-menu">
+          <a href="providers.html">Meet Dr. Cohen<small>Credentials, philosophy, and experience</small></a>
+          <a href="reviews.html">Patient Reviews<small>Read what our patients say</small></a>
+          <a href="video-testimonials.html">Video Testimonials<small>Patient stories on camera</small></a>
+          <a href="mobile-clinic.html">Mobile Hearing Clinic<small>Care that comes to your home</small></a>
+          <a href="refer.html">For Referring Providers<small>Refer a patient to our practice</small></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.services">Areas of Expertise</button>
+        <div class="nav-menu wide">
+          <span class="menu-head">Hearing care</span>
+          <a href="hearing-aids.html">Hearing Aids<small>Prescription and Lyric extended wear</small></a>
+          <a href="ear-wax-removal.html">Ear Wax Removal<small>Safe, same-visit removal</small></a>
+          <a href="cochlear-implants.html">Cochlear Implants<small>Evaluation and programming</small></a>
+          <a href="telehealth.html">Telehealth<small>Remote visits statewide</small></a>
+          <span class="menu-head">Tinnitus and therapy</span>
+          <a href="tinnitus.html">Tinnitus Treatment<small>Lenire, Levo, Neuromonics</small></a>
+          <a href="auditory-brain-therapy.html">Auditory Brain Therapy<small>Training how you process sound</small></a>
+          <a href="family-counseling.html">Family Counseling<small>Support for the whole household</small></a>
+          <a href="mobile-clinic.html">Mobile Hearing Clinic<small>In-home appointments</small></a>
+          <span class="menu-head">Protection and specialty</span>
+          <a href="hearing-protection.html">Hearing Protection<small>Custom plugs and monitors</small></a>
+          <a href="musician-hearing-care.html">Musician Hearing Care<small>Studios, stages, and rehearsals</small></a>
+          <a href="services.html" class="menu-all">See all Areas of Expertise</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.conditions">Conditions</button>
+        <div class="nav-menu">
+          <a href="hearing-loss.html">Hearing Loss<small>Types, causes, and treatment</small></a>
+          <a href="tinnitus.html">Tinnitus<small>Ringing, buzzing, and hissing</small></a>
+          <a href="apd.html">Auditory Processing Disorder<small>When hearing tests come back normal</small></a>
+          <a href="balance.html">Dizziness and Balance<small>Inner ear balance disorders</small></a>
+          <a href="dementia.html">Hearing Loss and Dementia<small>The cognitive connection</small></a>
+          <a href="hearing-injuries.html">Work-Related Hearing Injuries<small>Noise exposure and claims</small></a>
+          <a href="conditions.html" class="menu-all">See all conditions</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.resources">Resources</button>
+        <div class="nav-menu">
+          <a href="hearing-check.html">Online Hearing Check<small>A two-minute self-assessment</small></a>
+          <a href="resources.html">Patient Resources and FAQ<small>Answers to common questions</small></a>
+          <a href="patient-forms.html">Patient Forms<small>Complete paperwork before your visit</small></a>
+          <a href="reviews.html">Patient Reviews<small>Ratings and testimonials</small></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.locations">Locations</button>
+        <div class="nav-menu">
+          <a href="locations.html">Sherman Oaks Office<small>5900 Sepulveda Blvd, Suite 335</small></a>
+          <a href="beverly-hills.html">Beverly Hills<small>Serving the 90210 area</small></a>
+          <a href="encino.html">Encino<small>Minutes from the 101</small></a>
+          <a href="studio-city.html">Studio City<small>Serving the east valley</small></a>
+          <a href="telehealth.html" class="menu-all">Telehealth across California</a>
+        </div>
+      </div>
+
+      <div class="nav-cta">
+        <a href="hearing-check.html" class="cta-outline" data-i18n="nav.check">Hearing Check</a>
+        <a href="contact.html" class="cta-pill" data-i18n="nav.cta">Request Appointment</a>
+      </div>
     </nav>
   </div>
 </header>
+
+<main id="main">
 
 <section class="hero">
   <div class="wrap">
@@ -61,55 +140,26 @@
           Dr. Shahrzad Cohen has guided patients across Southern California through hearing loss and tinnitus since 2001, blending personalized care, advanced technology, and the time every appointment deserves.
         </p>
         <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary" data-i18n="hero.cta.primary">Schedule a Consultation</a>
-          <a href="services.html" class="btn btn-ghost" data-i18n="hero.cta.secondary">Explore Our Care</a>
+          <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="hero.cta.primary">Schedule a Consultation</a>
+          <a href="hearing-check.html" class="btn btn-ghost btn-lg">Take the Hearing Check</a>
         </div>
+        <p class="hero-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Two minutes, no obligation. Or call <a href="tel:8189899001">818-989-9001</a>.</span>
+        </p>
       </div>
       <div class="hero-img">
         <img src="assets/img/hero-conversation.png" alt="A grandmother and her adult daughter share a warm conversation in a sunlit room">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cream">
-  <div class="wrap">
-    <div class="two-col">
-      <div>
-        <img src="assets/img/mobile-clinic-car.jpg" alt="The Hearing Loss Solutions Mobile Hearing Clinic vehicle that brings hearing care to patients at home" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md);">
-      </div>
-      <div>
-        <span class="eyebrow" style="color:var(--primary-deep); font-weight:600; text-transform:uppercase; letter-spacing:0.12em; font-size:0.82rem;" data-i18n="mobile.eyebrow">Care That Comes To You</span>
-        <h2 data-i18n="mobile.h2">Mobile Hearing Clinic</h2>
-        <p class="hero-kicker" data-i18n="mobile.kicker">We come to you for hearing aid services.</p>
-        <p data-i18n="mobile.p1">
-          Our Mobile Hearing Clinic brings advanced diagnostic technology and personalized care into the comfort of your own home, so patients with restricted mobility can still get the full evaluation, fitting, and follow-up experience.
-        </p>
-        <p data-i18n="mobile.p2">
-          If hearing loss has left you or a loved one feeling isolated, this is one of the most important ways we reconnect people with the voices and moments they have been missing. Dr. Cohen personally makes these visits across the greater Los Angeles area, including assisted-living communities.
-        </p>
-        <ul class="checklist">
-          <li data-i18n="mobile.li1">Full hearing evaluation, fitting, and follow-up at home</li>
-          <li data-i18n="mobile.li2">Advanced portable diagnostic equipment</li>
-          <li data-i18n="mobile.li3">Ideal for patients with restricted mobility or transportation barriers</li>
-          <li data-i18n="mobile.li4">Available across the greater Los Angeles area, including assisted-living communities</li>
-        </ul>
-        <div class="hero-actions">
-          <a href="contact.html" class="btn btn-primary" data-i18n="mobile.cta.primary">Schedule an In-Home Visit</a>
-          <a href="mobile-clinic.html" class="btn btn-ghost" data-i18n="mobile.cta.secondary">Learn More</a>
+        <div class="hero-badge">
+          <div class="hb-mark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg>
+          </div>
+          <div>
+            <div class="hb-title">Marquis Who's Who</div>
+            <div class="hb-sub">2025 Honored Listee &middot; Doctor of Audiology since 2001</div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="trust-check-strip">
-  <div class="wrap">
-    <div class="trust-check-grid">
-      <div class="trust-check-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1E7D82"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Doctor of Audiology since 2001</div>
-      <div class="trust-check-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1E7D82"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Designated Lenire tinnitus provider</div>
-      <div class="trust-check-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1E7D82"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Multilingual care: English, Spanish, Farsi</div>
-      <div class="trust-check-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#1E7D82"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Telehealth available statewide</div>
     </div>
   </div>
 </section>
@@ -150,6 +200,37 @@
         <div class="cred-body">
           <div class="cred-title">Farsi, Spanish, English</div>
           <div class="cred-sub">Multilingual care, ASL by appointment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sand">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <img src="assets/img/mobile-clinic-car.jpg" alt="The Hearing Loss Solutions Mobile Hearing Clinic vehicle that brings hearing care to patients at home" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md);">
+      </div>
+      <div>
+        <span class="eyebrow" style="color:var(--primary-deep); font-weight:600; text-transform:uppercase; letter-spacing:0.12em; font-size:0.82rem;" data-i18n="mobile.eyebrow">Care That Comes To You</span>
+        <h2 data-i18n="mobile.h2">Mobile Hearing Clinic</h2>
+        <p class="hero-kicker" data-i18n="mobile.kicker">We come to you for hearing aid services.</p>
+        <p data-i18n="mobile.p1">
+          Our Mobile Hearing Clinic brings advanced diagnostic technology and personalized care into the comfort of your own home, so patients with restricted mobility can still get the full evaluation, fitting, and follow-up experience.
+        </p>
+        <p data-i18n="mobile.p2">
+          If hearing loss has left you or a loved one feeling isolated, this is one of the most important ways we reconnect people with the voices and moments they have been missing. Dr. Cohen personally makes these visits across the greater Los Angeles area, including assisted-living communities.
+        </p>
+        <ul class="checklist">
+          <li data-i18n="mobile.li1">Full hearing evaluation, fitting, and follow-up at home</li>
+          <li data-i18n="mobile.li2">Advanced portable diagnostic equipment</li>
+          <li data-i18n="mobile.li3">Ideal for patients with restricted mobility or transportation barriers</li>
+          <li data-i18n="mobile.li4">Available across the greater Los Angeles area, including assisted-living communities</li>
+        </ul>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary" data-i18n="mobile.cta.primary">Schedule an In-Home Visit</a>
+          <a href="mobile-clinic.html" class="btn btn-ghost" data-i18n="mobile.cta.secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -234,10 +315,41 @@
   </div>
 </section>
 
+<section class="sand">
+  <div class="wrap">
+    <div class="promo-card">
+      <div>
+        <span class="eyebrow">Start Here</span>
+        <h2>Not sure whether your hearing has changed?</h2>
+        <p>
+          Most people wait years before getting their hearing checked, usually because the change is gradual enough to explain away. Our online hearing check asks the eight questions we ask in the office, then tells you plainly whether a full evaluation makes sense for you.
+        </p>
+        <p>
+          It is free, it takes about two minutes, and nothing is submitted anywhere. Your answers stay in your browser.
+        </p>
+        <div class="hero-actions">
+          <a href="hearing-check.html" class="btn btn-primary">Take the Hearing Check</a>
+          <a href="contact.html" class="btn btn-ghost">Book an Evaluation Instead</a>
+        </div>
+      </div>
+      <div class="promo-visual">
+        <div class="pv-num">2 min</div>
+        <div class="pv-label">Eight questions, one clear answer</div>
+        <ul class="pv-list">
+          <li>Built from the questions Dr. Cohen asks at intake</li>
+          <li>Flags tinnitus, noise exposure, and balance concerns</li>
+          <li>Points you to the right next step, not a sales pitch</li>
+          <li>No email required and nothing stored</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="two-col">
-      <div>
+      <div class="split-media">
         <img src="assets/img/dr-cohen.png" alt="Shahrzad Cohen, Au.D.">
       </div>
       <div>
@@ -258,7 +370,30 @@
   </div>
 </section>
 
-<section class="cream">
+<section class="stats-band tight">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">2001</span>
+        <span class="stat-label">The year Dr. Cohen began practicing audiology in Southern California</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Languages spoken in the office: English, Spanish, and Farsi</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">60-90</span>
+        <span class="stat-label">Minutes set aside for your first comprehensive evaluation</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Tinnitus therapies offered, including FDA-cleared Lenire</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mist">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">More Ways We Support You</span>
@@ -304,7 +439,7 @@
   </div>
 </section>
 
-<section class="warm">
+<section class="cream">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Hearing Healthcare Continuum</span>
@@ -337,22 +472,59 @@
       <span class="eyebrow">See What Our Patients Say</span>
       <h2>Real stories from real patients.</h2>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <p class="quote">"My search for a competent audiologist stops here&hellip; Her comprehensive testing gives her a complete understanding of my hearing impairment. For the first time in decades, I feel I know more about my tinnitus and associated hearing loss."</p>
-        <p class="attribution">Wade W.</p>
+    <div class="carousel" data-carousel>
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <div class="carousel-quote">
+              <span class="stars" role="img" aria-label="Five out of five stars">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg>
+              </span>
+              <blockquote>"My search for a competent audiologist stops here&hellip; Her comprehensive testing gives her a complete understanding of my hearing impairment. For the first time in decades, I feel I know more about my tinnitus and associated hearing loss."</blockquote>
+              <p class="attribution">Wade W.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-quote">
+              <span class="stars" role="img" aria-label="Five out of five stars">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg>
+              </span>
+              <blockquote>"Dr. Cohen has helped me when my ENT gave me no hope. She came in on a Sunday to treat me before I was even her patient&hellip; I will be eternally grateful for her kindness, empathy, and dedication."</blockquote>
+              <p class="attribution">Kathy C.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-quote">
+              <span class="stars" role="img" aria-label="Five out of five stars">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg>
+              </span>
+              <blockquote>"Loved this office. Dr. and staff provided excellent service and took care of my problem. State-of-the-art equipment. I highly recommend Dr. Cohen's practice for anything regarding your hearing."</blockquote>
+              <p class="attribution">Joy S.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-quote">
+              <span class="stars" role="img" aria-label="Five out of five stars">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 8.2l5.9-.9z"/></svg>
+              </span>
+              <blockquote>"I read an article in AARP magazine about the LEVO treatment&hellip; after researching further, Dr. Cohen's name came up as a local audiologist using this system. She was personable, professional and most importantly knowledgeable. My really loud days already seem less."</blockquote>
+              <p class="attribution">Verified patient</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <p class="quote">"Dr. Cohen has helped me when my ENT gave me no hope. She came in on a Sunday to treat me before I was even her patient&hellip; I will be eternally grateful for her kindness, empathy, and dedication."</p>
-        <p class="attribution">Kathy C.</p>
-      </div>
-      <div class="testimonial-card">
-        <p class="quote">"Loved this office. Dr. and staff provided excellent service and took care of my problem. State-of-the-art equipment. I highly recommend Dr. Cohen's practice for anything regarding your hearing."</p>
-        <p class="attribution">Joy S.</p>
+      <div class="carousel-nav">
+        <button type="button" class="carousel-prev" aria-label="Previous review">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <div class="carousel-dots" role="tablist" aria-label="Choose a review"></div>
+        <button type="button" class="carousel-next" aria-label="Next review">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
       </div>
     </div>
-    <div style="text-align:center; margin-top:2rem;">
-      <a href="providers.html#testimonials" class="alt-link">Read more patient stories on our Team page</a>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="reviews.html" class="btn btn-ghost">Read All Patient Reviews</a>
     </div>
   </div>
 </section>
@@ -362,13 +534,29 @@
     <div class="cta-band">
       <h2>Ready to hear the people you love again?</h2>
       <p>Schedule a consultation with Dr. Cohen. We will listen, test carefully, and walk you through every option so you can choose with confidence.</p>
-      <a href="contact.html" class="btn btn-primary" data-i18n="footer.cta">Book Your Visit</a>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="footer.cta">Book Your Visit</a>
+        <a href="hearing-check.html" class="btn btn-ghost btn-lg">Take the Hearing Check</a>
+      </div>
+      <p class="cta-sub">Prefer to talk it through? Call <a href="tel:8189899001">818-989-9001</a>. Saturday and Sunday appointments available on request.</p>
     </div>
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer-cta-row">
+      <div>
+        <h3>Not sure where to start?</h3>
+        <p>Take our two-minute online hearing check, or call and speak with our team directly.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="hearing-check.html" class="btn btn-primary">Start the Hearing Check</a>
+        <a href="tel:8189899001" class="btn btn-ghost">818-989-9001</a>
+      </div>
+    </div>
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/img/logo.jpg" alt="Hearing Loss Solutions">
@@ -380,12 +568,14 @@
           <li><a href="services.html">Areas of Expertise</a></li>
           <li><a href="conditions.html">Conditions</a></li>
           <li><a href="resources.html">Patient Resources</a></li>
+          <li><a href="hearing-check.html">Online Hearing Check</a></li>
         </ul>
       </div>
       <div>
         <h4>Practice</h4>
         <ul>
-          <li><a href="providers.html">Team</a></li>
+          <li><a href="providers.html">Meet Dr. Cohen</a></li>
+          <li><a href="reviews.html">Patient Reviews</a></li>
           <li><a href="locations.html">Locations</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -418,7 +608,15 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/i18n.js?v=17"></script>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<div class="action-bar" aria-label="Quick actions">
+  <div class="action-bar-inner">
+    <a href="tel:8189899001"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+    <a href="hearing-check.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Hearing Check</a>
+    <a href="contact.html" class="primary"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Book</a>
+  </div>
+</div>
+
+<script src="assets/js/i18n.js?v=18"></script>
+<script src="assets/js/site.js?v=1"></script>
 </body>
 </html>

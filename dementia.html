@@ -8,20 +8,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
 <link rel="icon" href="assets/img/logo.jpg">
+<meta name="theme-color" content="#3D2810">
+<script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-fallback');},3000);</script>
 </head>
 <body>
 
-<div class="lang-bar">
-  <div class="lang-bar-inner">
-    <span class="lang-label">Language</span>
-    <div class="lang-toggle" role="group" aria-label="Language selector">
-      <button type="button" data-lang="en" class="active">EN</button>
-      <span class="sep">|</span>
-      <button type="button" data-lang="es">ES</button>
-      <span class="sep">|</span>
-      <button type="button" data-lang="fa">فارسی</button>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="util-bar">
+  <div class="util-bar-inner">
+    <div class="util-left">
+      <a class="util-item strong" href="tel:8189899001"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>818-989-9001</a>
+      <span class="util-sep util-address">|</span>
+      <a class="util-item util-address" href="locations.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>5900 Sepulveda Blvd, Suite 335, Sherman Oaks</a>
+      <span class="util-sep util-hours">|</span>
+      <span class="util-item util-hours"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon to Thu 9 to 5, Fri 9 to 4</span>
+    </div>
+    <div class="util-right">
+      <span class="lang-label">Language</span>
+      <div class="lang-toggle" role="group" aria-label="Language selector">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <span class="sep">|</span>
+        <button type="button" data-lang="es">ES</button>
+        <span class="sep">|</span>
+        <button type="button" data-lang="fa">&#1601;&#1575;&#1585;&#1587;&#1740;</button>
+      </div>
     </div>
   </div>
 </div>
@@ -35,20 +48,86 @@
         <span class="brand-tag">Shahrzad Cohen, Au.D.</span>
       </div>
     </a>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('nav.primary').classList.toggle('open')">
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <nav class="primary">
+    <nav class="primary" id="primary-nav" aria-label="Primary">
       <a href="index.html" data-i18n="nav.home">Home</a>
-      <a href="providers.html" data-i18n="nav.team">Team</a>
-      <a href="services.html" data-i18n="nav.services">Areas of Expertise</a>
-      <a href="conditions.html" data-i18n="nav.conditions">Conditions</a>
-      <a href="resources.html" data-i18n="nav.resources">Resources</a>
-      <a href="locations.html" data-i18n="nav.locations">Locations</a>
-      <a href="contact.html" class="cta-pill" data-i18n="nav.cta">Contact Us</a>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.about">About</button>
+        <div class="nav-menu">
+          <a href="providers.html">Meet Dr. Cohen<small>Credentials, philosophy, and experience</small></a>
+          <a href="reviews.html">Patient Reviews<small>Read what our patients say</small></a>
+          <a href="video-testimonials.html">Video Testimonials<small>Patient stories on camera</small></a>
+          <a href="mobile-clinic.html">Mobile Hearing Clinic<small>Care that comes to your home</small></a>
+          <a href="refer.html">For Referring Providers<small>Refer a patient to our practice</small></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.services">Areas of Expertise</button>
+        <div class="nav-menu wide">
+          <span class="menu-head">Hearing care</span>
+          <a href="hearing-aids.html">Hearing Aids<small>Prescription and Lyric extended wear</small></a>
+          <a href="ear-wax-removal.html">Ear Wax Removal<small>Safe, same-visit removal</small></a>
+          <a href="cochlear-implants.html">Cochlear Implants<small>Evaluation and programming</small></a>
+          <a href="telehealth.html">Telehealth<small>Remote visits statewide</small></a>
+          <span class="menu-head">Tinnitus and therapy</span>
+          <a href="tinnitus.html">Tinnitus Treatment<small>Lenire, Levo, Neuromonics</small></a>
+          <a href="auditory-brain-therapy.html">Auditory Brain Therapy<small>Training how you process sound</small></a>
+          <a href="family-counseling.html">Family Counseling<small>Support for the whole household</small></a>
+          <a href="mobile-clinic.html">Mobile Hearing Clinic<small>In-home appointments</small></a>
+          <span class="menu-head">Protection and specialty</span>
+          <a href="hearing-protection.html">Hearing Protection<small>Custom plugs and monitors</small></a>
+          <a href="musician-hearing-care.html">Musician Hearing Care<small>Studios, stages, and rehearsals</small></a>
+          <a href="services.html" class="menu-all">See all Areas of Expertise</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.conditions">Conditions</button>
+        <div class="nav-menu">
+          <a href="hearing-loss.html">Hearing Loss<small>Types, causes, and treatment</small></a>
+          <a href="tinnitus.html">Tinnitus<small>Ringing, buzzing, and hissing</small></a>
+          <a href="apd.html">Auditory Processing Disorder<small>When hearing tests come back normal</small></a>
+          <a href="balance.html">Dizziness and Balance<small>Inner ear balance disorders</small></a>
+          <a href="dementia.html">Hearing Loss and Dementia<small>The cognitive connection</small></a>
+          <a href="hearing-injuries.html">Work-Related Hearing Injuries<small>Noise exposure and claims</small></a>
+          <a href="conditions.html" class="menu-all">See all conditions</a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.resources">Resources</button>
+        <div class="nav-menu">
+          <a href="hearing-check.html">Online Hearing Check<small>A two-minute self-assessment</small></a>
+          <a href="resources.html">Patient Resources and FAQ<small>Answers to common questions</small></a>
+          <a href="patient-forms.html">Patient Forms<small>Complete paperwork before your visit</small></a>
+          <a href="reviews.html">Patient Reviews<small>Ratings and testimonials</small></a>
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <button type="button" class="nav-group-btn" data-i18n="nav.locations">Locations</button>
+        <div class="nav-menu">
+          <a href="locations.html">Sherman Oaks Office<small>5900 Sepulveda Blvd, Suite 335</small></a>
+          <a href="beverly-hills.html">Beverly Hills<small>Serving the 90210 area</small></a>
+          <a href="encino.html">Encino<small>Minutes from the 101</small></a>
+          <a href="studio-city.html">Studio City<small>Serving the east valley</small></a>
+          <a href="telehealth.html" class="menu-all">Telehealth across California</a>
+        </div>
+      </div>
+
+      <div class="nav-cta">
+        <a href="hearing-check.html" class="cta-outline" data-i18n="nav.check">Hearing Check</a>
+        <a href="contact.html" class="cta-pill" data-i18n="nav.cta">Request Appointment</a>
+      </div>
     </nav>
   </div>
 </header>
+
+<main id="main">
 
 <section class="page-header">
   <div class="wrap">
@@ -127,8 +206,20 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="wrap">
+    <div class="footer-cta-row">
+      <div>
+        <h3>Not sure where to start?</h3>
+        <p>Take our two-minute online hearing check, or call and speak with our team directly.</p>
+      </div>
+      <div class="hero-actions">
+        <a href="hearing-check.html" class="btn btn-primary">Start the Hearing Check</a>
+        <a href="tel:8189899001" class="btn btn-ghost">818-989-9001</a>
+      </div>
+    </div>
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/img/logo.jpg" alt="Hearing Loss Solutions">
@@ -140,12 +231,14 @@
           <li><a href="services.html">Areas of Expertise</a></li>
           <li><a href="conditions.html">Conditions</a></li>
           <li><a href="resources.html">Patient Resources</a></li>
+          <li><a href="hearing-check.html">Online Hearing Check</a></li>
         </ul>
       </div>
       <div>
         <h4>Practice</h4>
         <ul>
-          <li><a href="providers.html">Team</a></li>
+          <li><a href="providers.html">Meet Dr. Cohen</a></li>
+          <li><a href="reviews.html">Patient Reviews</a></li>
           <li><a href="locations.html">Locations</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -178,7 +271,15 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/i18n.js?v=17"></script>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<div class="action-bar" aria-label="Quick actions">
+  <div class="action-bar-inner">
+    <a href="tel:8189899001"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Call</a>
+    <a href="hearing-check.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Hearing Check</a>
+    <a href="contact.html" class="primary"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Book</a>
+  </div>
+</div>
+
+<script src="assets/js/i18n.js?v=18"></script>
+<script src="assets/js/site.js?v=1"></script>
 </body>
 </html>
