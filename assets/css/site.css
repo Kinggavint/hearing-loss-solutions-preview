@@ -1,19 +1,26 @@
 /* Hearing Loss Solutions: Shahrzad Cohen, Au.D. */
 
 :root {
-  --primary: #F7941D;
-  --primary-deep: #E56820;
+  --primary: #ED6A30;        /* her orange - large headings, fills      3.2:1 */
+  --primary-deep: #D4531B;   /* large headings / fills                  4.3:1 */
+  --orange-text: #B0430E;    /* small orange text - eyebrows, links     5.4:1 */
+  --primary-tint: #FFF1E9;
+  --cta: #C3181E;            /* her CTA red                             6.4:1 */
+  --cta-deep: #A0060A;
+  --green: #81D742;          /* Desyncra accent - fills/rules ONLY            */
+  --green-deep: #4F8C22;     /* Desyncra green as type/icon             4.6:1 */
+  --green-tint: #F2FBEA;
   --gold: #F8C90E;
   --amber: #C67A2C;
-  --amber-deep: #965F1D;
-  --brown: #3D2810;
-  --brown-light: #5A3D18;
-  --cream: #FDF3DF;
-  --cream-warm: #F7DDB2;
-  --charcoal: #1F1A14;
-  --ink: #2A241B;
-  --muted: #5E5445;
-  --line: #E8DCC4;
+  --amber-deep: #8A5312;
+  --brown: #1F1D1E;          /* headings are near-black now                   */
+  --brown-light: #3A3A3A;
+  --cream: #F7F7F7;          /* alt bands read white, not tan                 */
+  --cream-warm: #FFF1E9;
+  --charcoal: #141414;
+  --ink: #1A1A1A;            /* body copy                              17.4:1 */
+  --muted: #4A4A4A;          /* was #5E5445                             9.0:1 */
+  --line: #E2E2E2;
   --white: #FFFFFF;
   --teal: #1E7D82;
   --teal-deep: #135458;
@@ -42,14 +49,17 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 17.5px;
-  line-height: 1.72;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 body.nav-locked { overflow: hidden; }
+
+h1, h2 { color: var(--orange-text); }
+h3, h4 { color: var(--brown); }
 
 h1, h2, h3, h4 {
   font-family: "Lora", Georgia, "Times New Roman", serif;
@@ -67,7 +77,7 @@ h4 { font-size: 1.08rem; margin-bottom: 0.4rem; }
 p { margin-bottom: 1rem; }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--primary-deep); text-decoration: none; transition: color 0.18s ease; }
+a { color: var(--orange-text); text-decoration: none; transition: color 0.18s ease; }
 a:hover { color: var(--brown); }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -106,7 +116,7 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 0.85rem;
   text-decoration: none;
 }
-.brand img { height: 58px; width: auto; transition: height 0.25s var(--ease); }
+.brand img { height: 76px; width: auto; transition: height 0.25s var(--ease); }
 .brand-text {
   display: flex;
   flex-direction: column;
@@ -150,9 +160,9 @@ nav.primary > a,
   transition: color 0.18s ease, background 0.18s ease;
 }
 nav.primary > a:hover,
-.nav-group-btn:hover { color: var(--primary-deep); background: var(--sand); }
+.nav-group-btn:hover { color: var(--orange-text); background: var(--sand); }
 nav.primary a.current,
-.nav-group.has-current > .nav-group-btn { color: var(--primary-deep); font-weight: 600; }
+.nav-group.has-current > .nav-group-btn { color: var(--orange-text); font-weight: 600; }
 
 /* Dropdown groups */
 .nav-group { position: relative; }
@@ -232,7 +242,7 @@ nav.primary a.current,
   font-size: 0.8rem;
   margin-top: 0.1rem;
 }
-.nav-menu a:hover { background: var(--sand); color: var(--primary-deep); }
+.nav-menu a:hover { background: var(--sand); color: var(--orange-text); }
 .nav-menu a:hover small { color: var(--brown-light); }
 .nav-menu .menu-head {
   grid-column: 1 / -1;
@@ -248,13 +258,13 @@ nav.primary a.current,
   margin-top: 0.3rem;
   border-top: 1px solid var(--line-soft);
   padding-top: 0.6rem;
-  color: var(--primary-deep);
+  color: var(--orange-text);
   font-weight: 600;
 }
 
 .nav-cta { display: flex; align-items: center; gap: 0.5rem; margin-left: 0.5rem; }
 .cta-pill {
-  background: var(--primary);
+  background: var(--cta);
   color: var(--white) !important;
   padding: 0.62rem 1.25rem;
   border-radius: 999px;
@@ -264,7 +274,7 @@ nav.primary a.current,
   box-shadow: 0 6px 16px rgba(229, 104, 32, 0.24);
   transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
-.cta-pill:hover { background: var(--primary-deep); color: var(--white) !important; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(229, 104, 32, 0.3); }
+.cta-pill:hover { background: var(--cta-deep); color: var(--white) !important; transform: translateY(-1px); box-shadow: 0 10px 22px rgba(229, 104, 32, 0.3); }
 .cta-outline {
   border: 1.5px solid var(--teal);
   color: var(--teal-deep) !important;
@@ -374,7 +384,9 @@ nav.primary a.current,
   /* .hero-grid owns the vertical rhythm; without this the hero inherits the
      generic `section` padding on top of it and opens with a dead band. */
   padding: 0;
-  background: linear-gradient(168deg, #FEFBF6 0%, var(--sand) 42%, #F6EEE0 100%);
+  /* She asked for the white ground her reference site uses; the previous
+     warm wash is what read as "drabby". Keep only a whisper of warmth. */
+  background: linear-gradient(168deg, #FFFFFF 0%, #FFFDFB 55%, #FFF7F1 100%);
   overflow: hidden;
 }
 .hero::before {
@@ -482,8 +494,8 @@ nav.primary a.current,
   cursor: pointer;
   text-align: center;
 }
-.btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 8px 20px rgba(229, 104, 32, 0.26); }
-.btn-primary:hover { background: var(--primary-deep); color: var(--white); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(229, 104, 32, 0.32); }
+.btn-primary { background: var(--cta); color: var(--white); box-shadow: 0 8px 20px rgba(229, 104, 32, 0.26); }
+.btn-primary:hover { background: var(--cta-deep); color: var(--white); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(229, 104, 32, 0.32); }
 .btn-ghost { background: var(--white); color: var(--brown); border-color: var(--brown); }
 .btn-ghost:hover { background: var(--brown); color: var(--white); transform: translateY(-2px); }
 .btn-teal { background: var(--teal); color: var(--white); box-shadow: 0 8px 20px rgba(30, 125, 130, 0.26); }
@@ -507,7 +519,7 @@ section.warm { background: var(--cream-warm); }
 section.brown { background: var(--brown); color: var(--cream); }
 section.brown h1, section.brown h2, section.brown h3 { color: var(--white); }
 section.deep {
-  background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+  background: linear-gradient(135deg, var(--primary-tint), #FFE7D8);
   color: var(--white);
 }
 section.deep .section-head .eyebrow { color: var(--gold); }
@@ -518,7 +530,7 @@ section.deep .section-head p { color: rgba(255,255,255,0.85); }
 .section-head .eyebrow,
 .eyebrow {
   display: inline-block;
-  color: var(--primary-deep);
+  color: var(--orange-text);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -639,7 +651,7 @@ section.deep .section-head p { color: rgba(255,255,255,0.85); }
 }
 .cta-band h2 { color: var(--white); margin-bottom: 1rem; }
 .cta-band p { color: rgba(255,255,255,0.92); font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.8rem; }
-.cta-band .btn { background: var(--white); color: var(--primary-deep); }
+.cta-band .btn { background: var(--white); color: var(--orange-text); }
 .cta-band .btn:hover { background: var(--cream); }
 
 /* Lists */
@@ -662,8 +674,8 @@ section.deep .section-head p { color: rgba(255,255,255,0.85); }
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--primary);
-  box-shadow: 0 0 0 4px var(--cream-warm);
+  background: var(--green);
+  box-shadow: 0 0 0 4px var(--green-tint);
 }
 
 /* Footer */
@@ -905,7 +917,7 @@ section.deep .section-head p { color: rgba(255,255,255,0.85); }
   .cred-ribbon-grid { grid-template-columns: 1fr 1fr; }
 }
 
-.alt-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--primary-deep); font-weight: 600; }
+.alt-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--orange-text); font-weight: 600; }
 .alt-link:hover { color: var(--brown); }
 
 /* Provider card */
@@ -998,7 +1010,7 @@ a.util-item.strong { font-weight: 700; color: var(--white); }
 }
 .util-bar .lang-toggle button.active,
 .lang-bar .lang-toggle button.active {
-  background: var(--amber);
+  background: var(--cta);
   color: var(--white);
 }
 .util-bar .lang-toggle button:hover,
@@ -1304,7 +1316,7 @@ textarea:focus-visible {
 }
 .action-bar a:last-child { border-right: none; }
 .action-bar a svg { width: 21px; height: 21px; stroke: var(--primary-deep); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.action-bar a.primary { background: var(--primary); color: var(--white); }
+.action-bar a.primary { background: var(--cta); color: var(--white); }
 .action-bar a.primary svg { stroke: var(--white); }
 @media (max-width: 940px) {
   .action-bar { display: block; }
@@ -1313,7 +1325,7 @@ textarea:focus-visible {
 
 /* Stats band -------------------------------------------------------- */
 .stats-band {
-  background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+  background: linear-gradient(135deg, var(--primary-tint), #FFE7D8);
   color: var(--white);
   position: relative;
   overflow: hidden;
@@ -1649,7 +1661,7 @@ textarea:focus-visible {
 .hc-options { clear: both; }
 .hc-question .hc-num {
   display: inline-block;
-  color: var(--primary-deep);
+  color: var(--orange-text);
   font-family: "Source Sans 3", sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
@@ -1762,7 +1774,7 @@ textarea:focus-visible {
 .cta-band > * { position: relative; }
 .cta-band .hero-actions { justify-content: center; }
 .cta-band .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255, 255, 255, 0.7); }
-.cta-band .btn-ghost:hover { background: var(--white); color: var(--primary-deep); }
+.cta-band .btn-ghost:hover { background: var(--white); color: var(--orange-text); }
 .cta-sub {
   margin-top: 1.85rem;
   color: rgba(255, 255, 255, 0.9);
@@ -1834,3 +1846,198 @@ textarea:focus-visible {
   .util-bar, .lang-bar, .action-bar, .site-header, .cta-band, .carousel-nav { display: none !important; }
   body { padding-bottom: 0; }
 }
+
+/* ============================================================================
+   2026-08-10, second pass - from Dr. Cohen's call notes and the palette and
+   layout patterns on her own live site (hearinglosssolutions.com).
+   Layered on top of the reference-site redesign; reuses its .carousel for
+   rotating reviews rather than adding a second rotator.
+   ========================================================================= */
+
+/* --- Utility-bar phone: she wants it to be the loudest thing on the page ---
+   Her live site sets 818-989-9001 larger than any headline. Most of her
+   patients are 60+ and want to call, not browse. */
+.util-bar .util-item.strong {
+  font-size: 1.32rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+.util-bar .util-item.strong svg { width: 19px; height: 19px; }
+@media (max-width: 720px) { .util-bar .util-item.strong { font-size: 1.12rem; } }
+
+/* --- Spotlight circles: "everything we do, front and center" -------------- */
+/* Direct port of the "Learn & Know More About..." band on her live site,
+   which she named as the thing patients compliment. Captions are live HTML,
+   not baked into the images, so they translate and index. */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  gap: 1.75rem 1rem;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.spotlight-item { text-align: center; }
+.spotlight-item a { display: block; color: inherit; }
+.spotlight-ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--primary-tint);
+  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.18);
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+.spotlight-item a:hover .spotlight-ring {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(195, 24, 30, 0.32);
+}
+.spotlight-ring img { width: 100%; height: 100%; object-fit: cover; }
+.spotlight-ring .sp-cap {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(195, 24, 30, 0.96) 62%, rgba(195, 24, 30, 0));
+  color: var(--white);
+  padding: 1.6rem 0.6rem 0.85rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.18;
+}
+.spotlight-ring .sp-cap em {
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.72rem;
+  opacity: 0.92;
+  margin-top: 0.1rem;
+}
+
+/* --- Lenire band --------------------------------------------------------- */
+/* She flagged Lenire ("linear") as a leading service that was invisible; it
+   previously appeared only as 11px trust-bar text. */
+.lenire-band {
+  background: linear-gradient(100deg, #2B1A4A 0%, #5B2A82 52%, #8E2C86 100%);
+  color: var(--white);
+  padding: 2.4rem 0;
+}
+.lenire-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.lenire-badge {
+  width: 146px; height: 146px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; flex-shrink: 0; padding: 0.5rem; line-height: 1.1;
+}
+.lenire-badge .lb-top { font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.85; }
+.lenire-badge .lb-main { font-family: "Lora", serif; font-weight: 700; font-size: 1.16rem; margin: 0.18rem 0; }
+.lenire-badge .lb-sub { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
+.lenire-copy { flex: 1; min-width: 280px; max-width: 560px; }
+.lenire-copy h2 { color: var(--white); font-size: clamp(1.4rem, 2.4vw, 1.95rem); margin-bottom: 0.5rem; }
+.lenire-copy p { color: rgba(255, 255, 255, 0.92); margin-bottom: 1.1rem; }
+.lenire-copy .btn { background: var(--white); color: #5B2A82; border-color: var(--white); }
+.lenire-copy .btn:hover { background: #F3E8FA; color: #2B1A4A; }
+.lenire-wordmark {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 300; letter-spacing: 0.22em;
+  color: var(--white); flex-shrink: 0;
+}
+
+/* --- Photo service cards ------------------------------------------------- */
+/* Peachtree's real advantage is that every service card carries a photo of
+   real care. Falls back to a designed plate, never an empty frame. */
+.photo-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.photo-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.photo-card .pc-media {
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(140deg, var(--primary-tint), #FFE2D2);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.photo-card .pc-media img { width: 100%; height: 100%; object-fit: cover; }
+.photo-card .pc-body { padding: 1.4rem 1.5rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.photo-card .pc-body h3 { color: var(--orange-text); }
+.photo-card .pc-body p { color: var(--muted); font-size: 0.96rem; flex: 1; }
+.photo-card .alt-link { margin-top: 0.9rem; }
+.card-grid:has(.photo-card) { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 940px) { .card-grid:has(.photo-card) { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .card-grid:has(.photo-card) { grid-template-columns: 1fr; } }
+
+/* --- Video rail ---------------------------------------------------------- */
+/* Reads as a feature with one video and a library with eight, so it can ship
+   before her footage arrives without looking unfinished. */
+.video-feature { display: grid; grid-template-columns: 1.35fr 1fr; gap: 2.5rem; align-items: center; }
+@media (max-width: 900px) { .video-feature { grid-template-columns: 1fr; } }
+.video-frame {
+  position: relative; aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg); overflow: hidden;
+  background: #111; box-shadow: var(--shadow-md);
+}
+.video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-frame.pending {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.9rem; background: linear-gradient(140deg, #241206, #6B2A0C 60%, #A8410F);
+  color: var(--white); text-align: center; padding: 2rem;
+}
+.video-frame.pending .vf-play {
+  width: 68px; height: 68px; border-radius: 50%;
+  background: rgba(255,255,255,0.16); border: 2px solid rgba(255,255,255,0.7);
+  display: flex; align-items: center; justify-content: center;
+}
+.video-frame.pending .vf-play svg { width: 26px; height: 26px; fill: var(--white); }
+.video-frame.pending p { margin: 0; color: rgba(255,255,255,0.9); font-size: 0.95rem; max-width: 340px; }
+.video-thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.9rem; margin-top: 1.5rem; }
+.video-thumb {
+  position: relative; aspect-ratio: 16 / 10;
+  border-radius: var(--radius-sm); overflow: hidden;
+  background: linear-gradient(140deg, var(--primary), var(--cta));
+  display: flex; align-items: flex-end; padding: 0.6rem;
+  color: var(--white); font-size: 0.82rem; font-weight: 600; line-height: 1.2;
+  box-shadow: var(--shadow-sm);
+}
+.video-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.video-thumb::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.18) 46%, transparent 70%);
+}
+.video-thumb span { position: relative; z-index: 1; text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+
+/* --- Google attribution on the existing review carousel ------------------ */
+.carousel-quote .review-source {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  color: var(--muted); font-size: 0.9rem; font-weight: 600;
+}
+.carousel-quote .review-source svg { width: 16px; height: 16px; }
+
+/* --- Desyncra green accent rule ------------------------------------------ */
+.accent-rule {
+  width: 68px; height: 5px;
+  background: var(--green);
+  border-radius: 999px;
+  margin: 0.9rem auto 1.4rem;
+}
+
+/* Small orange text must clear AA; --primary-deep is for large headings only.
+   Low contrast was Dr. Cohen's top complaint and many of her patients have
+   vision loss alongside hearing loss. */
+.eyebrow, .alt-link { color: var(--orange-text); }
+.brand, .brand:hover { color: var(--brown); }
+nav.primary a.current, nav.primary .nav-group-btn.current { color: var(--orange-text); }
+h1, h2 { color: var(--primary-deep); }
