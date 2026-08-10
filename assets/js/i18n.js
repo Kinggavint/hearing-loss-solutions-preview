@@ -232,6 +232,14 @@
      Populated per page; entries are global + deduped across the whole site. */
   var content = {
     es: {
+      "With hearing loss the sound never fully arrives. With auditory processing disorder it arrives intact - the brain just cannot translate it.": "Con la perdida auditiva el sonido nunca llega del todo. Con el trastorno del procesamiento auditivo llega intacto: el cerebro simplemente no logra traducirlo.",
+      "Hearing is a relay. Sound is collected by the outer ear, converted in the cochlea, and carried up the auditory nerve to the brain, which does the understanding.": "La audicion es un relevo. El oido externo recoge el sonido, la coclea lo convierte y el nervio auditivo lo lleva al cerebro, que es quien comprende.",
+      "Tinnitus is sound generated inside the auditory system rather than outside it. Treatment aims to settle that activity, not mask it.": "El tinnitus es un sonido generado dentro del sistema auditivo, no fuera de el. El tratamiento busca calmar esa actividad, no enmascararla.",
+      "Lenire is bimodal: sound through headphones paired with gentle stimulation of the tongue, so the brain receives two coordinated signals at once.": "Lenire es bimodal: sonido a traves de auriculares combinado con una suave estimulacion de la lengua, de modo que el cerebro recibe dos senales coordinadas a la vez.",
+      "When sound arrives incomplete, the brain spends its effort filling the gaps - effort it would otherwise spend on memory and understanding.": "Cuando el sonido llega incompleto, el cerebro gasta su esfuerzo en rellenar los huecos: esfuerzo que de otro modo dedicaria a la memoria y la comprension.",
+      "The same inner ear that hears also tells you which way is up. The three semicircular canals sense rotation and keep you oriented.": "El mismo oido interno que oye tambien le indica donde esta el arriba. Los tres canales semicirculares detectan la rotacion y lo mantienen orientado.",
+      "Real-ear measurement puts a fine probe beside the eardrum to verify what the hearing aid is actually delivering, rather than assuming.": "La medicion en oido real coloca una sonda fina junto al timpano para verificar lo que el audifono esta entregando realmente, en lugar de suponerlo.",
+      "A cochlear implant bypasses the damaged part of the inner ear entirely, sending signal straight to the hearing nerve.": "Un implante coclear evita por completo la parte danada del oido interno y envia la senal directamente al nervio auditivo.",
       "Why Patients Travel to See Her.": "Por Que los Pacientes Viajan para Verla.",
       "The year Dr. Cohen began practicing audiology in Southern California": "El ano en que la Dra. Cohen comenzo a ejercer la audiologia en el sur de California",
       "Languages spoken in the office: English, Spanish, and Farsi": "Idiomas que se hablan en la consulta: ingles, espanol y farsi",
@@ -1054,6 +1062,14 @@
       "Schedule a consultation with Dr. Cohen. We will listen, test carefully, and walk you through every option so you can choose with confidence.": "Programe una consulta con la Dra. Cohen. Le escucharemos, evaluaremos con cuidado y le explicaremos cada opcion para que pueda elegir con confianza."
     },
     fa: {
+      "With hearing loss the sound never fully arrives. With auditory processing disorder it arrives intact - the brain just cannot translate it.": "در کم‌شنوایی صدا هرگز به‌طور کامل نمی‌رسد. در اختلال پردازش شنیداری صدا کامل می‌رسد — فقط مغز نمی‌تواند آن را ترجمه کند.",
+      "Hearing is a relay. Sound is collected by the outer ear, converted in the cochlea, and carried up the auditory nerve to the brain, which does the understanding.": "شنیدن یک زنجیره است. گوش بیرونی صدا را جمع می‌کند، حلزون گوش آن را تبدیل می‌کند و عصب شنوایی آن را به مغز می‌رساند؛ و این مغز است که می‌فهمد.",
+      "Tinnitus is sound generated inside the auditory system rather than outside it. Treatment aims to settle that activity, not mask it.": "وزوز گوش صدایی است که درون سیستم شنوایی تولید می‌شود، نه بیرون از آن. هدف درمان آرام‌کردن این فعالیت است، نه پنهان‌کردن آن.",
+      "Lenire is bimodal: sound through headphones paired with gentle stimulation of the tongue, so the brain receives two coordinated signals at once.": "Lenire دوحالته است: صدا از طریق هدفون همراه با تحریک ملایم زبان، تا مغز هم‌زمان دو سیگنال هماهنگ دریافت کند.",
+      "When sound arrives incomplete, the brain spends its effort filling the gaps - effort it would otherwise spend on memory and understanding.": "وقتی صدا ناقص می‌رسد، مغز توان خود را صرف پرکردن شکاف‌ها می‌کند — توانی که در غیر این صورت صرف حافظه و درک می‌شد.",
+      "The same inner ear that hears also tells you which way is up. The three semicircular canals sense rotation and keep you oriented.": "همان گوش داخلی که می‌شنود، جهت بالا را نیز به شما می‌گوید. سه مجرای نیم‌دایره چرخش را حس می‌کنند و جهت‌یابی شما را حفظ می‌کنند.",
+      "Real-ear measurement puts a fine probe beside the eardrum to verify what the hearing aid is actually delivering, rather than assuming.": "اندازه‌گیری واقعی داخل گوش یک پروب باریک را کنار پرده گوش قرار می‌دهد تا به‌جای حدس‌زدن، عملکرد واقعی سمعک راستی‌آزمایی شود.",
+      "A cochlear implant bypasses the damaged part of the inner ear entirely, sending signal straight to the hearing nerve.": "کاشت حلزون بخش آسیب‌دیده گوش داخلی را به‌طور کامل دور می‌زند و سیگنال را مستقیم به عصب شنوایی می‌فرستد.",
       "Why Patients Travel to See Her.": "چرا بیماران برای دیدن او سفر می‌کنند.",
       "The year Dr. Cohen began practicing audiology in Southern California": "سالی که دکتر کوهن کار شنوایی‌شناسی را در جنوب کالیفرنیا آغاز کرد",
       "Languages spoken in the office: English, Spanish, and Farsi": "زبان‌های رایج در مطب: انگلیسی، اسپانیایی و فارسی",
@@ -1889,7 +1905,7 @@
       .trim();
   }
 
-  var CONTENT_SEL = "section h1, section h2, section h3, section h4, section p, section .checklist li, section .eyebrow, .hero-kicker, .quote, blockquote, .attribution, .cred-title, .cred-sub, .pull-quote, section table th, section table td, .callout-box p, section .alt-link, .urgent-callout strong, .urgent-callout p, .contact-card h3, .contact-card .label, .faq-q, .faq-a, .stat-label, .feature-block h4, .feature-block p";
+  var CONTENT_SEL = "section h1, section h2, section h3, section h4, section p, section .checklist li, section .eyebrow, .hero-kicker, .quote, blockquote, .attribution, .cred-title, .cred-sub, .pull-quote, section table th, section table td, .callout-box p, section .alt-link, .urgent-callout strong, .urgent-callout p, .contact-card h3, .contact-card .label, .faq-q, .faq-a, .stat-label, .feature-block h4, .feature-block p, figcaption";
   var origHTML = new WeakMap();
 
   function applyContent(lang) {
