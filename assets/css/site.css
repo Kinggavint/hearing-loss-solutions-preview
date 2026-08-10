@@ -15,7 +15,7 @@
   --amber-deep: #8A5312;
   --brown: #1F1D1E;          /* headings are near-black now                   */
   --brown-light: #3A3A3A;
-  --cream: #F7F7F7;          /* alt bands read white, not tan                 */
+  --cream: #FFF3EA;          /* warm peach band - happy, still very light     */
   --cream-warm: #FFF1E9;
   --charcoal: #141414;
   --ink: #1A1A1A;            /* body copy                              17.4:1 */
@@ -28,8 +28,8 @@
 
   /* Airier neutrals: large surfaces sit on sand/mist so the amber accents
      stay accents instead of washing whole sections. */
-  --sand: #FBF7F0;
-  --mist: #F2F6F6;
+  --sand: #FFF6EE;
+  --mist: #F3FAEB;   /* soft Desyncra-green band for variety */
   --line-soft: #EFE7D8;
 
   --shadow-sm: 0 1px 2px rgba(74, 50, 22, 0.05), 0 4px 14px rgba(74, 50, 22, 0.06);
@@ -2186,4 +2186,95 @@ html:not(.js) .hero-slide:not(.is-active) { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-track { transition: none; }
+}
+
+/* --- Feedback pass: bigger titles, bigger circles, more colour ------------ */
+
+/* Every rotating headline after the first was an h2 at 2.4rem while slide 1's
+   h1 was 3.5rem, so five of six slides looked a size too small. They are one
+   family now. */
+[data-hero-rotator] .hero-copy h1,
+[data-hero-rotator] .hero-copy h2 {
+  font-size: clamp(2.5rem, 4.6vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  max-width: 15ch;
+}
+[data-hero-rotator] .hero-kicker { font-size: 1.2rem; }
+[data-hero-rotator] .hero-lede { font-size: 1.13rem; }
+
+/* Spotlight circles: bigger, with a warm ring so they carry colour of their
+   own instead of floating on white. */
+.spotlight-grid { grid-template-columns: repeat(auto-fit, minmax(236px, 1fr)); gap: 2rem 1.25rem; }
+.spotlight-ring {
+  width: 258px;
+  height: 258px;
+  box-shadow: 0 12px 30px rgba(20, 20, 20, 0.16),
+              0 0 0 5px var(--white),
+              0 0 0 9px rgba(237, 106, 48, 0.28);
+}
+.spotlight-item a:hover .spotlight-ring {
+  box-shadow: 0 20px 40px rgba(195, 24, 30, 0.30),
+              0 0 0 5px var(--white),
+              0 0 0 9px var(--cta);
+}
+.spotlight-ring .sp-cap { font-size: 1rem; padding: 2rem 0.7rem 1.05rem; }
+.spotlight-ring .sp-cap em { font-size: 0.78rem; }
+@media (max-width: 560px) {
+  .spotlight-ring { width: 210px; height: 210px; }
+}
+
+/* The section heading block was small relative to the new hero. */
+.section-head h2 { margin-bottom: 0.6rem; }
+.section-head .eyebrow { font-size: 0.9rem; letter-spacing: 0.14em; }
+.section-head p { font-size: 1.13rem; }
+.accent-rule { width: 84px; height: 6px; }
+
+/* Warm tint on the plain white sections so no band is pure white for long. */
+section.tight:not(.deep):not(.stats-band) { background: linear-gradient(180deg, #FFFFFF 0%, #FFFBF8 100%); }
+
+/* Cards were white on white. A warm hairline and a coloured top edge give the
+   grids some life without shouting. */
+.photo-card { border-color: #F0E2D8; }
+.photo-card .pc-media { border-bottom: 3px solid var(--primary); }
+.photo-card:hover { border-color: var(--primary); }
+.feature-block { border-color: #F0E2D8; background: var(--white); }
+.feature-block .f-icon { background: linear-gradient(140deg, #FFE7D8, #FFD3BE); }
+.feature-block .f-icon svg { stroke: var(--cta); }
+.card { border-color: #F0E2D8; }
+
+/* The five circles must stay on one row. At 258px they no longer fit the
+   1180px container, so this section alone gets a wider one. */
+.spotlight-section .wrap { max-width: 1360px; }
+.spotlight-section .spotlight-grid {
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1300px;
+  gap: 1.5rem 1rem;
+}
+.spotlight-section .spotlight-ring {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+@media (max-width: 1120px) {
+  .spotlight-section .spotlight-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .spotlight-section .spotlight-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 430px) {
+  .spotlight-section .spotlight-grid { grid-template-columns: 1fr; }
+}
+
+/* Give the circles a real band of colour to sit on rather than near-white. */
+.spotlight-section {
+  background: linear-gradient(180deg, #FFF6EF 0%, #FFEDE1 55%, #FFF6EF 100%);
+  border-top: 1px solid #F6E3D6;
+  border-bottom: 1px solid #F6E3D6;
+}
+.spotlight-section .spotlight-ring {
+  box-shadow: 0 12px 30px rgba(20, 20, 20, 0.16),
+              0 0 0 5px var(--white),
+              0 0 0 9px rgba(237, 106, 48, 0.35);
 }
