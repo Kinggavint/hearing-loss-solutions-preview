@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Conditions We Treat | Hearing Loss Solutions | Sherman Oaks</title>
-<meta name="description" content="Care for age-related and noise-induced hearing loss, chronic tinnitus, hyperacusis, misophonia, single-sided deafness, and auditory effects of concussion and TBI.">
+<title>Online Hearing Check | Free 2-Minute Self-Assessment | Hearing Loss Solutions</title>
+<meta name="description" content="Take a free two-minute online hearing check from Hearing Loss Solutions in Sherman Oaks. Eight questions, an instant result, and a clear next step. Nothing is stored or submitted.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-fallback');},3000);</script>
 </head>
 <body>
-
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -132,91 +131,188 @@
 
 <section class="page-header">
   <div class="wrap">
-    <p class="crumb" data-i18n="conditions.crumb">Conditions We Treat</p>
-    <h1 data-i18n="conditions.h1">From mild hearing change to chronic tinnitus, we have a plan.</h1>
-    <p data-i18n="conditions.p">Audiology covers more than hearing tests. Below is a quick guide to the conditions we evaluate and treat every week.</p>
+    <p class="crumb">Online Hearing Check</p>
+    <h1>How is your hearing, really?</h1>
+    <p>Eight questions, about two minutes. These are the same questions Dr. Cohen asks at the start of a first appointment, and your answers will tell you whether a full evaluation is worth booking.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="card-grid">
+    <div class="hc-shell">
 
-      <div class="card">
-        <h3>Age-Related Hearing Loss</h3>
-        <p>Gradual loss of higher frequencies, often noticed as &quot;I can hear, but I cannot understand.&quot; Highly treatable with the right device and counseling.</p>
-        <a href="hearing-loss.html" class="alt-link">What is hearing loss? &rsaquo;</a>
+      <div class="callout-box">
+        <p><strong>This is a self-assessment, not a hearing test.</strong> It cannot measure your hearing or diagnose anything. It runs entirely in your browser: nothing is submitted, stored, or emailed. If you would rather skip straight to a real measurement, <a href="contact.html">book a comprehensive evaluation</a>.</p>
       </div>
 
-      <div class="card">
-        <h3>Noise-Induced Hearing Loss</h3>
-        <p>From concerts, power tools, firearms, motorsports, and certain occupations. Prevention is the priority; protection is custom-fit.</p>
+      <div class="hc-progress-wrap">
+        <div class="hc-progress-row">
+          <div class="hc-progress" role="progressbar" aria-label="Hearing check progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="hc-progress-bar" id="hc-progress-bar"></div>
+          </div>
+          <span id="hc-progress-text">0 of 8 answered</span>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Sudden Sensorineural Hearing Loss</h3>
-        <p>Sudden sensorineural hearing loss is a medical urgency, with the best outcomes when treated within 72 hours. If your hearing drops suddenly in one ear, call us today. We hold same-day slots for these cases.</p>
-      </div>
+      <form id="hearing-check-form" novalidate>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 1 of 8</span><br>Do you find yourself asking people to repeat themselves?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q1" value="0"><span>Never</span></label>
+            <label><input type="radio" name="q1" value="1"><span>Sometimes</span></label>
+            <label><input type="radio" name="q1" value="2"><span>Often</span></label>
+            <label><input type="radio" name="q1" value="3"><span>Almost always</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 2 of 8</span><br>In a restaurant or a room with background noise, is it hard to follow the conversation?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q2" value="0"><span>Never</span></label>
+            <label><input type="radio" name="q2" value="1"><span>Sometimes</span></label>
+            <label><input type="radio" name="q2" value="2"><span>Often</span></label>
+            <label><input type="radio" name="q2" value="3"><span>Almost always</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 3 of 8</span><br>Has anyone told you the television or radio is too loud?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q3" value="0"><span>Never</span></label>
+            <label><input type="radio" name="q3" value="1"><span>Once or twice</span></label>
+            <label><input type="radio" name="q3" value="2"><span>Often</span></label>
+            <label><input type="radio" name="q3" value="3"><span>Regularly</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 4 of 8</span><br>Is it harder to hear higher-pitched voices, such as children or women, or to hear on the phone?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q4" value="0"><span>Not at all</span></label>
+            <label><input type="radio" name="q4" value="1"><span>A little</span></label>
+            <label><input type="radio" name="q4" value="2"><span>Noticeably</span></label>
+            <label><input type="radio" name="q4" value="3"><span>Very much</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 5 of 8</span><br>Do you hear ringing, buzzing, hissing, or other sound that has no source outside your head?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q5" value="0" data-flag="tinnitus"><span>Never</span></label>
+            <label><input type="radio" name="q5" value="1" data-flag="tinnitus"><span>Rarely</span></label>
+            <label><input type="radio" name="q5" value="2" data-flag="tinnitus"><span>Often</span></label>
+            <label><input type="radio" name="q5" value="3" data-flag="tinnitus"><span>Constantly</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 6 of 8</span><br>Are you regularly around loud sound: live music, machinery, power tools, or firearms?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q6" value="0" data-flag="noise"><span>Never</span></label>
+            <label><input type="radio" name="q6" value="1" data-flag="noise"><span>Occasionally</span></label>
+            <label><input type="radio" name="q6" value="2" data-flag="noise"><span>Weekly</span></label>
+            <label><input type="radio" name="q6" value="3" data-flag="noise"><span>Daily</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 7 of 8</span><br>Do you have dizziness, unsteadiness, or a spinning sensation?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q7" value="0" data-flag="balance"><span>Never</span></label>
+            <label><input type="radio" name="q7" value="1" data-flag="balance"><span>Rarely</span></label>
+            <label><input type="radio" name="q7" value="2" data-flag="balance"><span>Sometimes</span></label>
+            <label><input type="radio" name="q7" value="3" data-flag="balance"><span>Often</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="hc-question">
+          <legend><span class="hc-num">Question 8 of 8</span><br>Have you noticed a sudden drop in hearing in one or both ears?</legend>
+          <div class="hc-options">
+            <label><input type="radio" name="q8" value="0" data-flag="sudden"><span>No</span></label>
+            <label><input type="radio" name="q8" value="1" data-flag="sudden"><span>Yes, over a year ago</span></label>
+            <label><input type="radio" name="q8" value="2" data-flag="sudden"><span>Yes, in recent months</span></label>
+            <label><input type="radio" name="q8" value="3" data-flag="sudden"><span>Yes, within the last few weeks</span></label>
+          </div>
+        </fieldset>
 
-      <div class="card">
-        <h3>Chronic Tinnitus</h3>
-        <p>Ringing, buzzing, or hissing that lasts longer than three months. Treatment is multimodal and tailored to your specific tinnitus profile. See our full range of <a href="tinnitus.html">tinnitus treatments</a>, including Lenire, Levo, Neuromonics, and music therapy.</p>
-      </div>
+        <div class="hc-submit-row">
+          <button type="submit" class="btn btn-primary btn-lg">See My Result</button>
+        </div>
+      </form>
 
-      <div class="card">
-        <h3>Hyperacusis</h3>
-        <p>Reduced tolerance for everyday sound. A structured desensitization plan can restore your sound tolerance over months, not years.</p>
-      </div>
+      <div id="hearing-check-result" hidden></div>
 
-      <div class="card">
-        <h3>Misophonia</h3>
-        <p>Strong emotional reactions to specific sounds. We coordinate with mental health professionals when indicated and provide auditory tools.</p>
-      </div>
-
-      <div class="card">
-        <h3>Concussion and TBI</h3>
-        <p>Hearing, tinnitus, and sound sensitivity changes are common after a head injury. As a Certified Brain Injury Specialist, Dr. Cohen evaluates and treats these auditory effects.</p>
-      </div>
-
-      <div class="card">
-        <h3>Single-Sided Deafness</h3>
-        <p>Loss in one ear can be addressed with CROS devices, BiCROS systems, or in some cases bone-conduction technology after medical clearance.</p>
-      </div>
-
-      <div class="card">
-        <h3>Auditory Processing Difficulty</h3>
-        <p>Trouble understanding in noise even with normal hearing thresholds. Assessment, accommodations, and assistive tools can all help.</p>
-        <a href="apd.html" class="alt-link">What is APD? &rsaquo;</a>
-      </div>
-
-      <div class="card">
-        <h3>Hearing, Dementia &amp; Diabetes</h3>
-        <p>Untreated hearing loss is strongly linked to cognitive decline, and is about twice as common in adults with diabetes. Treating it early helps protect brain health.</p>
-        <a href="dementia.html" class="alt-link">The hearing-brain connection &rsaquo;</a>
-      </div>
-
-      <div class="card">
-        <h3>Dizziness &amp; Balance</h3>
-        <p>Feeling unsteady, woozy, or like the room is spinning? Balance is closely tied to the inner ear, from BPPV to M&eacute;ni&egrave;re&rsquo;s disease.</p>
-        <a href="balance.html" class="alt-link">About balance disorders &rsaquo;</a>
-      </div>
-
-      <div class="card">
-        <h3>Occupational Hearing Injuries</h3>
-        <p>Noise above 85 decibels can cause permanent, preventable hearing loss. Custom protection, testing, and workplace hearing conservation.</p>
-        <a href="hearing-injuries.html" class="alt-link">Preventing hearing injuries &rsaquo;</a>
-      </div>
+      <noscript>
+        <div class="callout-box" style="margin-top:2rem;">
+          <p><strong>This check needs JavaScript to score your answers.</strong> Please call <a href="tel:8189899001">818-989-9001</a> and we will walk through the same questions with you over the phone.</p>
+        </div>
+      </noscript>
 
     </div>
   </div>
 </section>
 
-<section class="cream">
+<section class="sand">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What Happens Next</span>
+      <h2>What a real evaluation adds.</h2>
+      <p>A screening tells you whether to look further. A comprehensive evaluation tells you what is actually happening and what to do about it.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="step">1</div>
+        <h3>A conversation first</h3>
+        <p>We start with your history, your work, the rooms you struggle in, and the moments that pushed you to call. That context shapes everything that follows.</p>
+      </div>
+      <div class="card">
+        <div class="step">2</div>
+        <h3>Full diagnostic testing</h3>
+        <p>Air and bone conduction, speech testing in quiet and in noise, middle ear measures, and tinnitus assessment when indicated. Not a quick screening.</p>
+      </div>
+      <div class="card">
+        <div class="step">3</div>
+        <h3>Results explained in plain language</h3>
+        <p>You see your audiogram, understand what it means, and leave with a written summary and a plan that includes every option, including doing nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="urgent-callout">
+      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M12 2v10"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M4 20h16"/></svg></div>
+      <div class="u-body">
+        <strong>Sudden hearing change in the last 72 hours?</strong>
+        <p>Do not wait for a screening result. Sudden sensorineural hearing loss is time-sensitive and treated best within days. We hold same-day slots for these cases.</p>
+      </div>
+      <a href="tel:8189899001" class="u-cta">Call 818-989-9001</a>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Keep Reading</span>
+      <h2>Related pages</h2>
+    </div>
+    <div class="pill-links">
+      <a href="hearing-loss.html">About hearing loss</a>
+      <a href="tinnitus.html">Tinnitus treatment</a>
+      <a href="hearing-aids.html">Hearing aids</a>
+      <a href="balance.html">Dizziness and balance</a>
+      <a href="hearing-protection.html">Hearing protection</a>
+      <a href="dementia.html">Hearing loss and dementia</a>
+      <a href="resources.html">Patient FAQ</a>
+    </div>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="cta-band">
-      <h2>Not sure what you are experiencing?</h2>
-      <p>That is the most common reason patients call us. We will sort it out together.</p>
-      <a href="contact.html" class="btn btn-primary">Book a Consultation</a>
+      <h2>Your result is a starting point. We will take it from here.</h2>
+      <p>Book a comprehensive evaluation with Dr. Cohen and find out exactly where your hearing stands.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg">Request an Appointment</a>
+        <a href="tel:8189899001" class="btn btn-ghost btn-lg">Call 818-989-9001</a>
+      </div>
+      <p class="cta-sub">Telehealth visits available across California. In-home visits available through our <a href="mobile-clinic.html">Mobile Hearing Clinic</a>.</p>
     </div>
   </div>
 </section>
