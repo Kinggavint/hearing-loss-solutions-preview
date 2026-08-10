@@ -2895,3 +2895,8 @@ section.deep .section-head .eyebrow { color: var(--cta); }
   margin-inline: auto;
 }
 @media (max-width: 720px) { .diagram { padding: 0 1rem; } }
+
+/* The legal links added to the footer bottom bar inherited the orange link
+   colour, which measures 2.9:1 against the dark footer. */
+.footer-bottom a { color: rgba(255, 250, 240, 0.9); text-decoration: underline; }
+.footer-bottom a:hover { color: var(--white); }
