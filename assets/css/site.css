@@ -2278,3 +2278,95 @@ section.tight:not(.deep):not(.stats-band) { background: linear-gradient(180deg, 
               0 0 0 5px var(--white),
               0 0 0 9px rgba(237, 106, 48, 0.35);
 }
+
+/* --- Background decoration ------------------------------------------------
+   Motifs drawn from her own logo, which already carries a soundwave: rounded
+   audio bars and concentric ripples reading as sound radiating outward.
+
+   Rules this follows so it never fights the content:
+   - Everything lives on a .deco layer at z-index 0 with pointer-events: none,
+     and page content is lifted to z-index 1. Nothing is ever on top of text.
+   - Placed in margins, corners and behind imagery, not behind paragraphs.
+   - Opacity is set by a single --deco-strength token so the whole system can
+     be dialled up or down in one place.
+   - Pure inline SVG, so it adds no requests and no image weight.
+   - Hidden for prefers-reduced-motion users only where it animates.
+*/
+:root { --deco-strength: 1; }
+
+.deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.deco > * { position: absolute; background-repeat: no-repeat; }
+
+/* keep real content above the decoration */
+.hero .wrap, .hero-viewport, .hero-controls,
+.spotlight-section .wrap,
+section > .wrap { position: relative; z-index: 1; }
+
+.deco-ripple-l {
+  left: -120px; top: 50%; transform: translateY(-50%);
+  width: 460px; height: 600px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='600' viewBox='0 0 460 600'><g fill='none' stroke='%23ED6A30' stroke-width='2.5'><circle cx='0' cy='300' r='70'/><circle cx='0' cy='300' r='122'/><circle cx='0' cy='300' r='174'/><circle cx='0' cy='300' r='226'/><circle cx='0' cy='300' r='278'/><circle cx='0' cy='300' r='330'/><circle cx='0' cy='300' r='382'/><circle cx='0' cy='300' r='434'/></g></svg>");
+  opacity: calc(0.13 * var(--deco-strength));
+}
+.deco-ripple-r {
+  right: -140px; top: 46%; transform: translateY(-50%);
+  width: 460px; height: 600px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='600' viewBox='0 0 460 600'><g fill='none' stroke='%234F8C22' stroke-width='2.5'><circle cx='460' cy='300' r='70'/><circle cx='460' cy='300' r='122'/><circle cx='460' cy='300' r='174'/><circle cx='460' cy='300' r='226'/><circle cx='460' cy='300' r='278'/><circle cx='460' cy='300' r='330'/><circle cx='460' cy='300' r='382'/><circle cx='460' cy='300' r='434'/></g></svg>");
+  opacity: calc(0.14 * var(--deco-strength));
+}
+.deco-wave-b {
+  left: 4%; bottom: 18px; width: 448px; height: 110px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='448' height='110' viewBox='0 0 448 110'><g fill='%23ED6A30'><rect x='0' y='53.0' width='3.6' height='4.0' rx='1.8'/><rect x='7' y='49.1' width='3.6' height='11.8' rx='1.8'/><rect x='14' y='45.2' width='3.6' height='19.6' rx='1.8'/><rect x='21' y='41.7' width='3.6' height='26.6' rx='1.8'/><rect x='28' y='38.5' width='3.6' height='33.0' rx='1.8'/><rect x='35' y='35.7' width='3.6' height='38.6' rx='1.8'/><rect x='42' y='33.3' width='3.6' height='43.3' rx='1.8'/><rect x='49' y='31.4' width='3.6' height='47.1' rx='1.8'/><rect x='56' y='30.1' width='3.6' height='49.8' rx='1.8'/><rect x='63' y='29.3' width='3.6' height='51.4' rx='1.8'/><rect x='70' y='29.1' width='3.6' height='51.8' rx='1.8'/><rect x='77' y='29.5' width='3.6' height='51.0' rx='1.8'/><rect x='84' y='30.4' width='3.6' height='49.2' rx='1.8'/><rect x='91' y='31.8' width='3.6' height='46.4' rx='1.8'/><rect x='98' y='33.6' width='3.6' height='42.8' rx='1.8'/><rect x='105' y='33.1' width='3.6' height='43.7' rx='1.8'/><rect x='112' y='29.4' width='3.6' height='51.2' rx='1.8'/><rect x='119' y='25.7' width='3.6' height='58.6' rx='1.8'/><rect x='126' y='22.1' width='3.6' height='65.8' rx='1.8'/><rect x='133' y='18.7' width='3.6' height='72.5' rx='1.8'/><rect x='140' y='15.7' width='3.6' height='78.5' rx='1.8'/><rect x='147' y='13.2' width='3.6' height='83.6' rx='1.8'/><rect x='154' y='11.2' width='3.6' height='87.5' rx='1.8'/><rect x='161' y='9.9' width='3.6' height='90.2' rx='1.8'/><rect x='168' y='9.2' width='3.6' height='91.5' rx='1.8'/><rect x='175' y='9.3' width='3.6' height='91.4' rx='1.8'/><rect x='182' y='10.1' width='3.6' height='89.9' rx='1.8'/><rect x='189' y='11.5' width='3.6' height='87.0' rx='1.8'/><rect x='196' y='13.6' width='3.6' height='82.8' rx='1.8'/><rect x='203' y='16.3' width='3.6' height='77.5' rx='1.8'/><rect x='210' y='19.4' width='3.6' height='71.3' rx='1.8'/><rect x='217' y='22.8' width='3.6' height='64.3' rx='1.8'/><rect x='224' y='26.5' width='3.6' height='56.9' rx='1.8'/><rect x='231' y='27.0' width='3.6' height='56.1' rx='1.8'/><rect x='238' y='23.3' width='3.6' height='63.3' rx='1.8'/><rect x='245' y='20.0' width='3.6' height='70.0' rx='1.8'/><rect x='252' y='17.0' width='3.6' height='76.0' rx='1.8'/><rect x='259' y='14.5' width='3.6' height='81.1' rx='1.8'/><rect x='266' y='12.5' width='3.6' height='85.0' rx='1.8'/><rect x='273' y='11.2' width='3.6' height='87.6' rx='1.8'/><rect x='280' y='10.5' width='3.6' height='88.9' rx='1.8'/><rect x='287' y='10.6' width='3.6' height='88.8' rx='1.8'/><rect x='294' y='11.3' width='3.6' height='87.3' rx='1.8'/><rect x='301' y='12.8' width='3.6' height='84.5' rx='1.8'/><rect x='308' y='14.8' width='3.6' height='80.4' rx='1.8'/><rect x='315' y='17.3' width='3.6' height='75.3' rx='1.8'/><rect x='322' y='20.3' width='3.6' height='69.3' rx='1.8'/><rect x='329' y='23.7' width='3.6' height='62.6' rx='1.8'/><rect x='336' y='27.2' width='3.6' height='55.5' rx='1.8'/><rect x='343' y='30.9' width='3.6' height='48.2' rx='1.8'/><rect x='350' y='34.5' width='3.6' height='41.0' rx='1.8'/><rect x='357' y='35.6' width='3.6' height='38.7' rx='1.8'/><rect x='364' y='34.1' width='3.6' height='41.7' rx='1.8'/><rect x='371' y='33.1' width='3.6' height='43.8' rx='1.8'/><rect x='378' y='32.5' width='3.6' height='44.9' rx='1.8'/><rect x='385' y='32.5' width='3.6' height='45.0' rx='1.8'/><rect x='392' y='33.1' width='3.6' height='43.8' rx='1.8'/><rect x='399' y='34.2' width='3.6' height='41.5' rx='1.8'/><rect x='406' y='36.0' width='3.6' height='38.0' rx='1.8'/><rect x='413' y='38.3' width='3.6' height='33.5' rx='1.8'/><rect x='420' y='41.1' width='3.6' height='27.8' rx='1.8'/><rect x='427' y='44.4' width='3.6' height='21.1' rx='1.8'/><rect x='434' y='48.4' width='3.6' height='13.1' rx='1.8'/><rect x='441' y='53.0' width='3.6' height='4.0' rx='1.8'/></g></svg>");
+  opacity: calc(0.16 * var(--deco-strength));
+}
+.deco-wave-r {
+  right: 3%; bottom: 26px; width: 448px; height: 110px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='448' height='110' viewBox='0 0 448 110'><g fill='%23ED6A30'><rect x='0' y='53.0' width='3.6' height='4.0' rx='1.8'/><rect x='7' y='49.1' width='3.6' height='11.8' rx='1.8'/><rect x='14' y='45.2' width='3.6' height='19.6' rx='1.8'/><rect x='21' y='41.7' width='3.6' height='26.6' rx='1.8'/><rect x='28' y='38.5' width='3.6' height='33.0' rx='1.8'/><rect x='35' y='35.7' width='3.6' height='38.6' rx='1.8'/><rect x='42' y='33.3' width='3.6' height='43.3' rx='1.8'/><rect x='49' y='31.4' width='3.6' height='47.1' rx='1.8'/><rect x='56' y='30.1' width='3.6' height='49.8' rx='1.8'/><rect x='63' y='29.3' width='3.6' height='51.4' rx='1.8'/><rect x='70' y='29.1' width='3.6' height='51.8' rx='1.8'/><rect x='77' y='29.5' width='3.6' height='51.0' rx='1.8'/><rect x='84' y='30.4' width='3.6' height='49.2' rx='1.8'/><rect x='91' y='31.8' width='3.6' height='46.4' rx='1.8'/><rect x='98' y='33.6' width='3.6' height='42.8' rx='1.8'/><rect x='105' y='33.1' width='3.6' height='43.7' rx='1.8'/><rect x='112' y='29.4' width='3.6' height='51.2' rx='1.8'/><rect x='119' y='25.7' width='3.6' height='58.6' rx='1.8'/><rect x='126' y='22.1' width='3.6' height='65.8' rx='1.8'/><rect x='133' y='18.7' width='3.6' height='72.5' rx='1.8'/><rect x='140' y='15.7' width='3.6' height='78.5' rx='1.8'/><rect x='147' y='13.2' width='3.6' height='83.6' rx='1.8'/><rect x='154' y='11.2' width='3.6' height='87.5' rx='1.8'/><rect x='161' y='9.9' width='3.6' height='90.2' rx='1.8'/><rect x='168' y='9.2' width='3.6' height='91.5' rx='1.8'/><rect x='175' y='9.3' width='3.6' height='91.4' rx='1.8'/><rect x='182' y='10.1' width='3.6' height='89.9' rx='1.8'/><rect x='189' y='11.5' width='3.6' height='87.0' rx='1.8'/><rect x='196' y='13.6' width='3.6' height='82.8' rx='1.8'/><rect x='203' y='16.3' width='3.6' height='77.5' rx='1.8'/><rect x='210' y='19.4' width='3.6' height='71.3' rx='1.8'/><rect x='217' y='22.8' width='3.6' height='64.3' rx='1.8'/><rect x='224' y='26.5' width='3.6' height='56.9' rx='1.8'/><rect x='231' y='27.0' width='3.6' height='56.1' rx='1.8'/><rect x='238' y='23.3' width='3.6' height='63.3' rx='1.8'/><rect x='245' y='20.0' width='3.6' height='70.0' rx='1.8'/><rect x='252' y='17.0' width='3.6' height='76.0' rx='1.8'/><rect x='259' y='14.5' width='3.6' height='81.1' rx='1.8'/><rect x='266' y='12.5' width='3.6' height='85.0' rx='1.8'/><rect x='273' y='11.2' width='3.6' height='87.6' rx='1.8'/><rect x='280' y='10.5' width='3.6' height='88.9' rx='1.8'/><rect x='287' y='10.6' width='3.6' height='88.8' rx='1.8'/><rect x='294' y='11.3' width='3.6' height='87.3' rx='1.8'/><rect x='301' y='12.8' width='3.6' height='84.5' rx='1.8'/><rect x='308' y='14.8' width='3.6' height='80.4' rx='1.8'/><rect x='315' y='17.3' width='3.6' height='75.3' rx='1.8'/><rect x='322' y='20.3' width='3.6' height='69.3' rx='1.8'/><rect x='329' y='23.7' width='3.6' height='62.6' rx='1.8'/><rect x='336' y='27.2' width='3.6' height='55.5' rx='1.8'/><rect x='343' y='30.9' width='3.6' height='48.2' rx='1.8'/><rect x='350' y='34.5' width='3.6' height='41.0' rx='1.8'/><rect x='357' y='35.6' width='3.6' height='38.7' rx='1.8'/><rect x='364' y='34.1' width='3.6' height='41.7' rx='1.8'/><rect x='371' y='33.1' width='3.6' height='43.8' rx='1.8'/><rect x='378' y='32.5' width='3.6' height='44.9' rx='1.8'/><rect x='385' y='32.5' width='3.6' height='45.0' rx='1.8'/><rect x='392' y='33.1' width='3.6' height='43.8' rx='1.8'/><rect x='399' y='34.2' width='3.6' height='41.5' rx='1.8'/><rect x='406' y='36.0' width='3.6' height='38.0' rx='1.8'/><rect x='413' y='38.3' width='3.6' height='33.5' rx='1.8'/><rect x='420' y='41.1' width='3.6' height='27.8' rx='1.8'/><rect x='427' y='44.4' width='3.6' height='21.1' rx='1.8'/><rect x='434' y='48.4' width='3.6' height='13.1' rx='1.8'/><rect x='441' y='53.0' width='3.6' height='4.0' rx='1.8'/></g></svg>");
+  opacity: calc(0.13 * var(--deco-strength));
+}
+.deco-dots {
+  width: 210px; height: 210px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'><circle cx='3' cy='3' r='2.4' fill='%23ED6A30'/></svg>");
+  background-repeat: repeat;
+  opacity: calc(0.16 * var(--deco-strength));
+}
+.deco-dots.tl { left: 2.5%; top: 42px; }
+.deco-dots.br { right: 3%; bottom: 40px; }
+
+/* Softly fade the edges so motifs dissolve instead of ending on a hard line. */
+.deco-ripple-l, .deco-ripple-r, .deco-wave-b, .deco-wave-r, .deco-dots {
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 42%, transparent 78%);
+          mask-image: radial-gradient(ellipse at center, #000 42%, transparent 78%);
+}
+
+/* Decoration is scenery: drop it on small screens where space is scarce. */
+@media (max-width: 900px) { .deco { display: none; } }
+
+/* Medium is the level that reads as "alive" without competing. One number
+   controls the whole system - raise or lower it here. */
+:root { --deco-strength: 2.2; }
+
+/* In the hero the copy column starts at the container gutter, and at this
+   strength the ripple arcs were crossing the body paragraph. Pull it out so
+   only the outer arcs show in the margin, clear of any text. */
+.hero .deco-ripple-l {
+  left: -360px;
+  opacity: calc(0.11 * var(--deco-strength));
+}
+/* Same reason: keep the soundwave in the outer margin, below the card grid. */
+section.cream .deco-wave-r { right: 0.5%; bottom: 14px; opacity: calc(0.10 * var(--deco-strength)); }
+
+/* Any section carrying a .deco layer must be a positioning context, or the
+   layer escapes to the page and lands on unrelated content. .spotlight-section
+   was missing this and its dots were rendering over the hero copy. */
+section:has(> .deco) { position: relative; }
+.spotlight-section { position: relative; }
+
+/* Dots were the least useful motif and the most likely to sit behind copy. */
+.deco-dots { display: none; }
