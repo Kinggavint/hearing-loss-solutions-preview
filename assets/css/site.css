@@ -2623,3 +2623,110 @@ section.deep h1, section.deep h3, section.deep h4 { color: var(--brown); }
   .lenire-inner { flex-direction: column; text-align: center; gap: 1.75rem; }
   .lenire-actions { justify-content: center; }
 }
+
+/* --- Sudden-loss alert, as a corner card ---------------------------------
+   Deliberately not a modal. This message matters most to someone in a hurry,
+   so it must never cover the phone number, block the page, or trap focus.
+   It slides in low-left, is dismissible, and stays dismissed for 30 days. */
+.urgent-pop {
+  position: fixed;
+  /* Bottom-RIGHT: the hero copy and its CTAs sit on the left, and testing
+     showed a left-hand card landing on top of the hero buttons. */
+  right: clamp(1rem, 2vw, 1.75rem);
+  bottom: clamp(1rem, 2vw, 1.75rem);
+  z-index: 70;
+  width: min(360px, calc(100vw - 2rem));
+  padding: 1.15rem 1.3rem 1.25rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #A32017 0%, #85160F 100%);
+  color: var(--white);
+  box-shadow: 0 18px 44px rgba(90, 12, 8, 0.34);
+  transform: translateY(14px);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.urgent-pop.is-in { opacity: 1; transform: none; }
+.urgent-pop .up-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.45rem; }
+.urgent-pop .up-mark {
+  width: 30px; height: 30px; flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.17);
+  display: flex; align-items: center; justify-content: center;
+}
+.urgent-pop .up-mark svg {
+  width: 17px; height: 17px;
+  /* the old icon carried a stray baseline rule under the exclamation mark */
+  stroke: var(--white); fill: none; stroke-width: 2.3;
+  display: block;
+}
+.urgent-pop strong { font-family: "Lora", serif; font-size: 1.02rem; line-height: 1.25; }
+.urgent-pop p { font-size: 0.9rem; color: rgba(255,255,255,0.93); margin: 0 0 0.9rem; }
+.urgent-pop .up-cta {
+  display: inline-block;
+  background: var(--white); color: #96170F;
+  padding: 0.55rem 1.05rem; border-radius: 999px;
+  font-weight: 700; font-size: 0.94rem;
+}
+.urgent-pop .up-cta:hover { background: #FFECEA; color: #7A1009; }
+.urgent-pop .up-close {
+  position: absolute; top: 0.5rem; right: 0.6rem;
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(255,255,255,0.75); font-size: 1.4rem; line-height: 1;
+  padding: 0.15rem 0.35rem; border-radius: 6px;
+}
+.urgent-pop .up-close:hover { color: var(--white); background: rgba(255,255,255,0.14); }
+.urgent-pop .up-close:focus-visible,
+.urgent-pop .up-cta:focus-visible { outline: 3px solid var(--white); outline-offset: 2px; }
+@media (max-width: 940px) {
+  /* clear the sticky mobile action bar */
+  .urgent-pop { bottom: 74px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .urgent-pop { transition: none; }
+}
+
+/* --- Concierge section --------------------------------------------------
+   It read as bland for two reasons: the three step cards were plain white
+   boxes, and the five perks below wrapped 4 + 1 into a ragged second row.
+   The steps now carry warm colour and a visible sequence; the perks sit in one
+   even row of five. */
+.card-grid:has(.step) { grid-template-columns: repeat(3, 1fr); }
+.card:has(.step) {
+  background: linear-gradient(170deg, #FFFFFF 0%, #FFF6EF 100%);
+  border: 1px solid #F2DFD2;
+  border-top: 4px solid var(--primary);
+  padding: 2rem 1.75rem 1.9rem;
+}
+.card .step {
+  width: 54px; height: 54px;
+  background: linear-gradient(140deg, var(--primary), var(--cta));
+  font-size: 1.4rem;
+  box-shadow: 0 8px 20px rgba(195, 24, 30, 0.24);
+}
+.card:has(.step) h3 { color: var(--orange-text); font-size: 1.28rem; }  /* AA on the warm card */
+
+/* Five perks, one row, matched heights. */
+.feature-strip {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+.feature-block {
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.4rem 1.15rem 1.5rem;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFAF6 100%);
+  border: 1px solid #F2DFD2;
+  border-radius: var(--radius);
+}
+.feature-block .f-icon {
+  width: 46px; height: 46px;
+  background: linear-gradient(140deg, #FFE3D2, #FFD0B8);
+  border-radius: 12px;
+}
+.feature-block .f-icon svg { stroke: var(--cta); width: 23px; height: 23px; }
+.feature-block h4 { font-size: 1rem; line-height: 1.25; margin-bottom: 0.25rem; color: var(--brown); }
+.feature-block p { font-size: 0.88rem; line-height: 1.5; }
+@media (max-width: 1080px) { .feature-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px)  { .feature-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px)  { .feature-strip { grid-template-columns: 1fr; } }
+@media (max-width: 900px)  { .card-grid:has(.step) { grid-template-columns: 1fr; } }

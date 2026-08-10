@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=21">
+<link rel="stylesheet" href="assets/css/site.css?v=24">
 <link rel="icon" href="assets/img/logo.jpg">
 <meta name="theme-color" content="#3D2810">
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-fallback');},3000);</script>
@@ -420,20 +420,6 @@
   </div>
 </section>
 
-<section class="tight urgent-section">
-  <div class="wrap">
-    <div class="urgent-callout">
-      <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M12 2v10"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M4 20h16"/></svg></div>
-      <div class="u-body">
-        <strong>Sudden hearing change in the last 72 hours?</strong>
-        <p>Sudden sensorineural hearing loss is time-sensitive. We hold same-day slots for these cases. Call our office and mention "sudden loss."</p>
-      </div>
-      <a href="tel:8189899001" class="u-cta">Call 818-989-9001</a>
-    </div>
-  </div>
-</section>
-
-
 <section class="tight deep">
   <div class="wrap">
     <div class="section-head" style="margin-bottom:2rem;">
@@ -601,35 +587,35 @@
         <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div>
         <div>
           <h4>Same-Day Appointment Starts</h4>
-          <p>When a diagnostic and immediate treatment plan can be combined, we work to start same-day so you leave with a path forward.</p>
+          <p>Diagnostic and treatment plan combined where possible, so you leave with a path forward.</p>
         </div>
       </div>
       <div class="feature-block">
         <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6"/></svg></div>
         <div>
           <h4>VIP Program</h4>
-          <p>Ongoing care membership with priority scheduling, annual clean and check appointments, and warranty tracking. Ask us for details.</p>
+          <p>Priority scheduling, annual clean and check, and warranty tracking.</p>
         </div>
       </div>
       <div class="feature-block">
         <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h4"/></svg></div>
         <div>
           <h4>Financing Options</h4>
-          <p>CareCredit accepted. We provide itemized super bills for possible out-of-network reimbursement from your insurer.</p>
+          <p>CareCredit accepted, plus itemized super bills for out-of-network reimbursement.</p>
         </div>
       </div>
       <div class="feature-block">
         <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-6 4 2 8-6-4-6 4 2-8-6-4h7z"/></svg></div>
         <div>
           <h4>Military and First Responder Appreciation</h4>
-          <p>Reduced pricing on select devices and program packages for active-duty military, veterans, and first responders. Verification requested at consultation.</p>
+          <p>Reduced pricing on select devices for active-duty military, veterans, and first responders.</p>
         </div>
       </div>
       <div class="feature-block">
         <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 21c-4-4-8-7-8-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-4 8-8 12z"/></svg></div>
         <div>
           <h4>Weekend Appointments</h4>
-          <p>Saturday and Sunday appointments available by request. Reach our office to schedule.</p>
+          <p>Saturday and Sunday appointments available by request.</p>
         </div>
       </div>
     </div>
@@ -817,6 +803,22 @@
 </div>
 
 <script src="assets/js/i18n.js?v=21"></script>
-<script src="assets/js/site.js?v=3"></script>
+<script src="assets/js/site.js?v=4"></script>
+<!-- Sudden-loss alert. Moved out of the page flow at Gavin's request.
+     It is a dismissible corner card rather than a modal: sudden sensorineural
+     loss is genuinely time-critical, so it must never block the phone number or
+     trap focus. Dismissal is remembered for 30 days. -->
+<div class="urgent-pop" id="urgentPop" role="complementary" aria-label="Sudden hearing change" hidden>
+  <button type="button" class="up-close" aria-label="Dismiss this notice">&times;</button>
+  <div class="up-head">
+    <span class="up-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 6.5v7.2" stroke-linecap="round"/><circle cx="12" cy="17.6" r="1.35" fill="currentColor" stroke="none"/></svg>
+    </span>
+    <strong>Sudden hearing change in the last 72 hours?</strong>
+  </div>
+  <p>Sudden sensorineural hearing loss is time-sensitive. We hold same-day slots. Call and mention &ldquo;sudden loss.&rdquo;</p>
+  <a href="tel:8189899001" class="up-cta">Call 818-989-9001</a>
+</div>
+
 </body>
 </html>

@@ -497,6 +497,38 @@
     start();
   }
 
+  /* Sudden-loss alert card.
+     Appears after a short delay rather than on load, so it does not land on top
+     of someone still reading the hero. Dismissal persists for 30 days. It is
+     deliberately not a modal and does not trap focus - someone having a sudden
+     hearing loss should never have to close a dialog to find the phone number.
+     The same warning also lives permanently on the contact page. */
+  function initUrgentPop() {
+    var pop = document.getElementById("urgentPop");
+    if (!pop) return;
+    var KEY = "hls-urgent-dismissed";
+    try {
+      var until = parseInt(localStorage.getItem(KEY) || "0", 10);
+      if (until && Date.now() < until) return;
+    } catch (e) { /* private mode: just show it */ }
+
+    pop.hidden = false;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setTimeout(function () { pop.classList.add("is-in"); }, reduce ? 0 : 2200);
+
+    function dismiss() {
+      pop.classList.remove("is-in");
+      try { localStorage.setItem(KEY, String(Date.now() + 30 * 864e5)); } catch (e) {}
+      setTimeout(function () { pop.hidden = true; }, 400);
+    }
+    pop.querySelector(".up-close").addEventListener("click", dismiss);
+    pop.addEventListener("keydown", function (e) { if (e.key === "Escape") dismiss(); });
+    // tapping the number means they acted on it; no need to nag again
+    pop.querySelector(".up-cta").addEventListener("click", function () {
+      try { localStorage.setItem(KEY, String(Date.now() + 30 * 864e5)); } catch (e) {}
+    });
+  }
+
   function ready(fn) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", fn);
@@ -511,6 +543,7 @@
     initReveal();
     initCarousel();
     initHeroRotator();
+    initUrgentPop();
     initHearingCheck();
     initFaq();
     var yearEl = document.getElementById("year");
