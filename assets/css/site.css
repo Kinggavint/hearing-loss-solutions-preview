@@ -182,7 +182,23 @@ nav.primary a.current,
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.18s var(--ease), transform 0.18s var(--ease), visibility 0.18s;
+  /* Grace period before closing, so a slightly wobbly diagonal to a menu item
+     does not dismiss the menu the moment the pointer clips an edge. */
+  transition-delay: 0.25s;
   z-index: 70;
+}
+/* Bridges the gap between the button and the menu. The menu is absolutely
+   positioned, so that strip belongs to no element and the pointer "falls
+   through" it on the way down, closing the menu mid-travel. The pseudo-element
+   is a DOM descendant of .nav-group, so hovering it keeps the group hovered.
+   Absolute positioning keeps it out of .nav-menu.wide's grid flow. */
+.nav-menu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.75rem;
+  height: 0.75rem;
 }
 .nav-menu.wide {
   min-width: 560px;
@@ -197,6 +213,8 @@ nav.primary a.current,
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
+  /* Opens immediately; only the close is delayed. */
+  transition-delay: 0s;
 }
 .nav-menu a {
   display: block;
@@ -333,7 +351,11 @@ nav.primary a.current,
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s var(--ease);
+    transition-delay: 0s;
   }
+  /* No hover on the drawer, and .nav-menu is static here, so the gap bridge
+     would only float loose against some other positioned ancestor. */
+  .nav-menu::before { display: none; }
   .nav-menu.wide { display: block; min-width: 0; }
   .nav-group:hover > .nav-menu,
   .nav-group:focus-within > .nav-menu { max-height: 0; }
