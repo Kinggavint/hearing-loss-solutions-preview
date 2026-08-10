@@ -1899,10 +1899,9 @@ textarea:focus-visible {
 .spotlight-ring .sp-cap {
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to top, rgba(150, 14, 19, 0.97) 0%, rgba(195, 24, 30, 0.94) 58%, rgba(195, 24, 30, 0.55) 82%, rgba(195, 24, 30, 0));
+  background: linear-gradient(to top, rgba(195, 24, 30, 0.96) 62%, rgba(195, 24, 30, 0));
   color: var(--white);
-  padding: 2.1rem 0.7rem 0.95rem;
-  text-shadow: 0 1px 3px rgba(90, 6, 10, 0.5);
+  padding: 1.6rem 0.6rem 0.85rem;
   font-weight: 700;
   font-size: 0.9rem;
   line-height: 1.18;

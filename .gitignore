@@ -1,1 +1,6 @@
 assets/img/from-live/
+
+# Client email drafts and their attachments. This repo is PUBLIC and served by
+# GitHub Pages - never commit anything containing client contact details.
+.email-assets/
+*.eml
