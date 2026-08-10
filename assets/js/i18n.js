@@ -109,6 +109,10 @@
      Applied across every page to the curated selectors below. */
   var phrases = {
     es: {
+      "Designated": "Proveedora Designada",
+      "Lenire Provider": "Proveedora de Lenire",
+      "FDA-cleared tinnitus therapy": "Terapia para el tinnitus autorizada por la FDA",
+      "Ask if Lenire is right for you ›": "Pregunte si Lenire es adecuado para usted ›",
       "Take the Hearing Check": "Haga la Revision Auditiva",
       "Understand the Connection": "Comprenda la Relacion",
       "See In-Home Care": "Vea la Atencion a Domicilio",
@@ -164,6 +168,10 @@
       "Learn More": "Mas Informacion"
     },
     fa: {
+      "Designated": "ارائه‌دهنده رسمی",
+      "Lenire Provider": "ارائه‌دهنده Lenire",
+      "FDA-cleared tinnitus therapy": "درمان وزوز گوش با تأیید FDA",
+      "Ask if Lenire is right for you ›": "بپرسید آیا Lenire برای شما مناسب است ›",
       "Meet Dr. Cohen": "با دکتر کوهن آشنا شوید",
       "Take the Hearing Check": "بررسی شنوایی را انجام دهید",
       "Understand the Connection": "این ارتباط را بشناسید",
@@ -216,7 +224,7 @@
   };
 
   // Selectors whose elements are safe to translate by exact text match.
-  var PHRASE_SEL = ".lang-label, .site-footer h4, .site-footer .footer-brand p, .site-footer li > a, .btn, .u-cta";
+  var PHRASE_SEL = ".lang-label, .site-footer h4, .site-footer .footer-brand p, .site-footer li > a, .btn, .u-cta, .ls-top, .ls-main, .ls-sub, .lenire-link";
 
   /* Content layer: translates body copy by exact canonicalized innerHTML.
      Keys are canonicalized by norm(): straight quotes, "..." for ellipsis,
@@ -224,6 +232,7 @@
      Populated per page; entries are global + deduped across the whole site. */
   var content = {
     es: {
+      "Lenire is the first FDA-cleared bimodal neuromodulation device for tinnitus, combining sound with gentle stimulation of the tongue. Dr. Cohen is a designated Lenire provider and builds it into a complete tinnitus program, alongside Levo and Neuromonics, rather than handing you a single device.": "Lenire es el primer dispositivo de neuromodulacion bimodal autorizado por la FDA para el tinnitus, y combina sonido con una suave estimulacion de la lengua. La Dra. Cohen es proveedora designada de Lenire y lo integra en un programa completo de tinnitus, junto con Levo y Neuromonics, en lugar de entregarle un solo dispositivo.",
       "TINNITUS CARE": "ATENCION DEL TINNITUS",
       "Do You Suffer From Ringing in Your Ears?": "Sufre de Zumbido en los Oidos?",
       "You do not have to learn to live with it.": "No tiene que aprender a vivir con ello.",
@@ -1035,6 +1044,7 @@
       "Schedule a consultation with Dr. Cohen. We will listen, test carefully, and walk you through every option so you can choose with confidence.": "Programe una consulta con la Dra. Cohen. Le escucharemos, evaluaremos con cuidado y le explicaremos cada opcion para que pueda elegir con confianza."
     },
     fa: {
+      "Lenire is the first FDA-cleared bimodal neuromodulation device for tinnitus, combining sound with gentle stimulation of the tongue. Dr. Cohen is a designated Lenire provider and builds it into a complete tinnitus program, alongside Levo and Neuromonics, rather than handing you a single device.": "Lenire نخستین دستگاه نورومدولاسیون دوحالته دارای تأیید FDA برای وزوز گوش است و صدا را با تحریک ملایم زبان ترکیب می‌کند. دکتر کوهن ارائه‌دهنده رسمی Lenire است و آن را در کنار Levo و Neuromonics در یک برنامه کامل درمان وزوز گوش به کار می‌گیرد، نه به‌عنوان یک دستگاه تنها.",
       "TINNITUS CARE": "مراقبت وزوز گوش",
       "Do You Suffer From Ringing in Your Ears?": "آیا از زنگ‌زدن گوش رنج می‌برید؟",
       "You do not have to learn to live with it.": "لازم نیست یاد بگیرید با آن کنار بیایید.",

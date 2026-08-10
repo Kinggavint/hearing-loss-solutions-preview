@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=20">
+<link rel="stylesheet" href="assets/css/site.css?v=21">
 <link rel="icon" href="assets/img/logo.jpg">
 <meta name="theme-color" content="#3D2810">
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-fallback');},3000);</script>
@@ -323,8 +323,6 @@
 </section>
 
 
-<!-- Lenire: flagged on the 2026-08-10 call as a leading service that was
-     invisible on the rebuild. It previously appeared only as trust-bar text. -->
 <section class="sand">
   <div class="wrap">
     <div class="promo-card">
@@ -356,20 +354,37 @@
   </div>
 </section>
 
+<!-- Lenire. Structured like Peachtree's Lenire page: product/brand lockup on
+     one side, credential and copy on the other.
+
+     NOTE: Peachtree displays an official Neuromod "PREFERRED PROVIDER - 1 of 14
+     Nationwide" seal. That is a Neuromod-issued asset for a specific award tier.
+     Dr. Cohen's own site says "designated Lenire provider", which may be a
+     different tier, so recreating that seal would be claiming a distinction she
+     may not hold on a medical site. The credential below is set typographically
+     as our own lockup instead. Swap in the real badge once Neuromod supplies it
+     - the .lenire-seal slot is sized for it. -->
 <section class="lenire-band">
   <div class="wrap">
     <div class="lenire-inner">
-      <div class="lenire-badge">
-        <span class="lb-top">Designated</span>
-        <span class="lb-main">Lenire<br>Provider</span>
-        <span class="lb-sub">FDA-Cleared</span>
+      <div class="lenire-lockup">
+        <div class="lenire-wordmark">LENIRE<sup>&reg;</sup></div>
+        <div class="lenire-seal">
+          <span class="ls-rule"></span>
+          <span class="ls-top">Designated</span>
+          <span class="ls-main">Lenire Provider</span>
+          <span class="ls-sub">FDA-cleared tinnitus therapy</span>
+          <span class="ls-rule"></span>
+        </div>
       </div>
       <div class="lenire-copy">
         <h2>Lenire Tinnitus Treatment, Now Available in Sherman Oaks</h2>
-        <p>Lenire is the first FDA-cleared bimodal neuromodulation device for tinnitus. Dr. Cohen is a designated Lenire provider and builds it into a complete tinnitus program, alongside Levo and Neuromonics, rather than handing you a single device.</p>
-        <a href="tinnitus.html" class="btn">Learn About Lenire</a>
+        <p>Lenire is the first FDA-cleared bimodal neuromodulation device for tinnitus, combining sound with gentle stimulation of the tongue. Dr. Cohen is a designated Lenire provider and builds it into a complete tinnitus program, alongside Levo and Neuromonics, rather than handing you a single device.</p>
+        <div class="lenire-actions">
+          <a href="tinnitus.html" class="btn">Learn About Lenire</a>
+          <a href="contact.html" class="lenire-link">Ask if Lenire is right for you &rsaquo;</a>
+        </div>
       </div>
-      <div class="lenire-wordmark">LENIRE</div>
     </div>
   </div>
 </section>
@@ -396,15 +411,6 @@
         <p data-i18n="mobile.p1">
           Our Mobile Hearing Clinic brings advanced diagnostic technology and personalized care into the comfort of your own home, so patients with restricted mobility can still get the full evaluation, fitting, and follow-up experience.
         </p>
-        <p data-i18n="mobile.p2">
-          If hearing loss has left you or a loved one feeling isolated, this is one of the most important ways we reconnect people with the voices and moments they have been missing. Dr. Cohen personally makes these visits across the greater Los Angeles area, including assisted-living communities.
-        </p>
-        <ul class="checklist">
-          <li data-i18n="mobile.li1">Full hearing evaluation, fitting, and follow-up at home</li>
-          <li data-i18n="mobile.li2">Advanced portable diagnostic equipment</li>
-          <li data-i18n="mobile.li3">Ideal for patients with restricted mobility or transportation barriers</li>
-          <li data-i18n="mobile.li4">Available across the greater Los Angeles area, including assisted-living communities</li>
-        </ul>
         <div class="hero-actions">
           <a href="contact.html" class="btn btn-primary" data-i18n="mobile.cta.primary">Schedule an In-Home Visit</a>
           <a href="mobile-clinic.html" class="btn btn-ghost" data-i18n="mobile.cta.secondary">Learn More</a>
@@ -427,72 +433,6 @@
   </div>
 </section>
 
-<section class="cream" style="position:relative;">
-  <div class="deco" aria-hidden="true">
-    <span class="deco-wave-r"></span>
-  </div>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">What We Treat</span>
-      <h2>Care Designed Around How You Live and Listen.</h2>
-      <div class="accent-rule"></div>
-      <p>Hearing changes affect work, relationships, and the way you experience the world. Our care starts with listening to you, then matching the right technology and therapy to your goals.</p>
-    </div>
-    <div class="card-grid">
-      <div class="photo-card">
-        <div class="pc-media"><img src="assets/img/spotlight/tinnitus-wide.jpg" alt="A woman covering her ears, distressed by ringing from tinnitus"></div>
-        <div class="pc-body">
-          <h3>Tinnitus Treatment</h3>
-          <p>Designated Lenire provider, plus Levo and Neuromonics therapies. A complete tinnitus program, not a single device.</p>
-          <a href="tinnitus.html" class="alt-link">Learn More</a>
-        </div>
-      </div>
-      <div class="photo-card">
-        <div class="pc-media"><img src="assets/img/spotlight/card-hearing-aids.jpg" alt="A couple laughing together after being fitted with hearing aids"></div>
-        <div class="pc-body">
-          <h3>Advanced Hearing Aids</h3>
-          <p>Lyric extended-wear, premium prescription devices, and real-world fitting verification with real-ear measurement.</p>
-          <a href="hearing-aids.html" class="alt-link">Learn More</a>
-        </div>
-      </div>
-      <div class="photo-card">
-        <div class="pc-media"><img src="assets/img/spotlight/dr-cohen-consult.jpg" alt="Dr. Cohen examining a patient's ear during a hearing evaluation"></div>
-        <div class="pc-body">
-          <h3>Hearing Evaluations</h3>
-          <p>Comprehensive diagnostic testing that goes beyond a basic screening, with results explained in plain language.</p>
-          <a href="services.html" class="alt-link">Learn More</a>
-        </div>
-      </div>
-      <div class="photo-card">
-        <div class="pc-media"><img src="assets/img/spotlight/card-musicians.jpg" alt="A musician playing guitar while wearing custom hearing protection"></div>
-        <div class="pc-body">
-          <h3>Musicians Hearing Care</h3>
-          <p>Custom in-ear monitors, musician's filtered earplugs, and protection built for the way you actually perform.</p>
-          <a href="musician-hearing-care.html" class="alt-link">Learn More</a>
-        </div>
-      </div>
-      <div class="photo-card">
-        <div class="pc-media"><img src="assets/img/spotlight/card-hearing-injuries.jpg" alt="A person in a loud environment who relies on custom hearing protection"></div>
-        <div class="pc-body">
-          <h3>Hearing Injuries</h3>
-          <p>Custom protection and post-injury care for first responders, shooters, and anyone who works in loud environments.</p>
-          <a href="hearing-injuries.html" class="alt-link">Learn More</a>
-        </div>
-      </div>
-      <div class="photo-card">
-        <div class="pc-media"><img src="assets/img/spotlight/grandchildren.jpg" alt="A grandmother laughing with her two grandchildren outdoors"></div>
-        <div class="pc-body">
-          <h3>Second Opinions</h3>
-          <p>A careful review of prior testing, hearing aid programming, and treatment plans, with clear next steps.</p>
-          <a href="services.html" class="alt-link">Learn More</a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:2.5rem;">
-      <a href="services.html" class="btn btn-ghost">See All Areas of Expertise</a>
-    </div>
-  </div>
-</section>
 
 <section class="tight deep">
   <div class="wrap">
@@ -571,9 +511,27 @@
   </div>
 </section>
 
-<section class="cred-ribbon">
+<section class="stats-band tight">
   <div class="wrap">
-    <div class="cred-ribbon-grid">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">2001</span>
+        <span class="stat-label">The year Dr. Cohen began practicing audiology in Southern California</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Languages spoken in the office: English, Spanish, and Farsi</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">60-90</span>
+        <span class="stat-label">Minutes set aside for your first comprehensive evaluation</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Tinnitus therapies offered, including FDA-cleared Lenire</span>
+      </div>
+    </div>
+    <div class="cred-ribbon-grid trust-merged">
       <div class="cred-item">
         <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg></div>
         <div class="cred-body">
@@ -613,34 +571,30 @@
   </div>
 </section>
 
-<section class="stats-band tight">
-  <div class="wrap">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <span class="stat-num">2001</span>
-        <span class="stat-label">The year Dr. Cohen began practicing audiology in Southern California</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Languages spoken in the office: English, Spanish, and Farsi</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">60-90</span>
-        <span class="stat-label">Minutes set aside for your first comprehensive evaluation</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">4</span>
-        <span class="stat-label">Tinnitus therapies offered, including FDA-cleared Lenire</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="mist">
+<section class="cream">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">More Ways We Support You</span>
-      <h2>Concierge Care Extends Beyond the Office.</h2>
+      <span class="eyebrow">Hearing Healthcare Continuum</span>
+      <h2>Concierge Care, Out-of-Network by Design.</h2>
+      <p>We are an out-of-network practice. That choice lets us spend the time each patient needs, fit technology rigorously, and follow through long after the device arrives. We provide super bills you can submit to your insurance for possible reimbursement.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="step">1</div>
+        <h3>Guided Progress Through the Healing Journey</h3>
+        <p>A full conversation about your hearing history, lifestyle, work, and the moments that matter most to you, followed by clear next steps at every stage of care.</p>
+      </div>
+      <div class="card">
+        <div class="step">2</div>
+        <h3>Personalized Approach</h3>
+        <p>Comprehensive audiologic evaluation, tinnitus assessment when indicated, and a clear written summary you keep, tailored to how you actually live and listen.</p>
+      </div>
+      <div class="card">
+        <div class="step">3</div>
+        <h3>Expertise and Experience</h3>
+        <p>We review every option, including doing nothing, and choose the path that fits your goals and budget, backed by decades of clinical training.</p>
+      </div>
     </div>
     <div class="feature-strip">
       <div class="feature-block">
@@ -677,33 +631,6 @@
           <h4>Weekend Appointments</h4>
           <p>Saturday and Sunday appointments available by request. Reach our office to schedule.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cream">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Hearing Healthcare Continuum</span>
-      <h2>Concierge Care, Out-of-Network by Design.</h2>
-      <p>We are an out-of-network practice. That choice lets us spend the time each patient needs, fit technology rigorously, and follow through long after the device arrives. We provide super bills you can submit to your insurance for possible reimbursement.</p>
-    </div>
-    <div class="card-grid">
-      <div class="card">
-        <div class="step">1</div>
-        <h3>Guided Progress Through the Healing Journey</h3>
-        <p>A full conversation about your hearing history, lifestyle, work, and the moments that matter most to you, followed by clear next steps at every stage of care.</p>
-      </div>
-      <div class="card">
-        <div class="step">2</div>
-        <h3>Personalized Approach</h3>
-        <p>Comprehensive audiologic evaluation, tinnitus assessment when indicated, and a clear written summary you keep, tailored to how you actually live and listen.</p>
-      </div>
-      <div class="card">
-        <div class="step">3</div>
-        <h3>Expertise and Experience</h3>
-        <p>We review every option, including doing nothing, and choose the path that fits your goals and budget, backed by decades of clinical training.</p>
       </div>
     </div>
   </div>
@@ -889,7 +816,7 @@
   </div>
 </div>
 
-<script src="assets/js/i18n.js?v=20"></script>
+<script src="assets/js/i18n.js?v=21"></script>
 <script src="assets/js/site.js?v=3"></script>
 </body>
 </html>
