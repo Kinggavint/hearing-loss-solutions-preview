@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=18">
+<link rel="stylesheet" href="assets/css/site.css?v=20">
 <link rel="icon" href="assets/img/logo.jpg">
 <meta name="theme-color" content="#3D2810">
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('reveal-fallback');},3000);</script>
@@ -301,7 +301,6 @@
     <div class="section-head" style="margin-bottom:2.25rem;">
       <h2>Learn &amp; Know More About&hellip;</h2>
       <div class="accent-rule"></div>
-      <p>Click below to learn more about the care we are known for.</p>
     </div>
     <div class="spotlight-grid">
       <div class="spotlight-item"><a href="tinnitus.html"><div class="spotlight-ring">
@@ -323,50 +322,40 @@
   </div>
 </section>
 
-<section class="cred-ribbon">
+
+<!-- Lenire: flagged on the 2026-08-10 call as a leading service that was
+     invisible on the rebuild. It previously appeared only as trust-bar text. -->
+<section class="sand">
   <div class="wrap">
-    <div class="cred-ribbon-grid">
-      <div class="cred-item">
-        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg></div>
-        <div class="cred-body">
-          <div class="cred-title">Marquis Who's Who</div>
-          <div class="cred-sub">2025 Honored Listee</div>
+    <div class="promo-card">
+      <div>
+        <span class="eyebrow">Start Here</span>
+        <h2>Not Sure Whether Your Hearing Has Changed?</h2>
+        <p>
+          Most people wait years before getting their hearing checked, usually because the change is gradual enough to explain away. Our online hearing check asks the eight questions we ask in the office, then tells you plainly whether a full evaluation makes sense for you.
+        </p>
+        <p>
+          It is free, it takes about two minutes, and nothing is submitted anywhere. Your answers stay in your browser.
+        </p>
+        <div class="hero-actions">
+          <a href="hearing-check.html" class="btn btn-primary">Take the Hearing Check</a>
+          <a href="contact.html" class="btn btn-ghost">Book an Evaluation Instead</a>
         </div>
       </div>
-      <div class="cred-item">
-        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
-        <div class="cred-body">
-          <div class="cred-title">Au.D., CH-TM, CBIS</div>
-          <div class="cred-sub">Doctor of Audiology</div>
-        </div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0v6a6 6 0 0 1-12 0z"/><path d="M9 12a3 3 0 0 1 6 0"/></svg></div>
-        <div class="cred-body">
-          <div class="cred-title">Designated Lenire Provider</div>
-          <div class="cred-sub">FDA-cleared tinnitus therapy</div>
-        </div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <div class="cred-body">
-          <div class="cred-title">Practicing Since 2001</div>
-          <div class="cred-sub">Sherman Oaks office since 2014</div>
-        </div>
-      </div>
-      <div class="cred-item">
-        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div>
-        <div class="cred-body">
-          <div class="cred-title">Farsi, Spanish, English</div>
-          <div class="cred-sub">Multilingual care, ASL by appointment</div>
-        </div>
+      <div class="promo-visual">
+        <div class="pv-num">2 min</div>
+        <div class="pv-label">Eight questions, one clear answer</div>
+        <ul class="pv-list">
+          <li>Built from the questions Dr. Cohen asks at intake</li>
+          <li>Flags tinnitus, noise exposure, and balance concerns</li>
+          <li>Points you to the right next step, not a sales pitch</li>
+          <li>No email required and nothing stored</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Lenire: flagged on the 2026-08-10 call as a leading service that was
-     invisible on the rebuild. It previously appeared only as trust-bar text. -->
 <section class="lenire-band">
   <div class="wrap">
     <div class="lenire-inner">
@@ -389,7 +378,16 @@
   <div class="wrap">
     <div class="two-col">
       <div>
-        <img src="assets/img/mobile-clinic-car.jpg" alt="The Hearing Loss Solutions Mobile Hearing Clinic vehicle that brings hearing care to patients at home" style="border-radius:var(--radius-lg); box-shadow:var(--shadow-md);">
+        <div class="clinic-visual">
+          <div class="clinic-route" aria-hidden="true"></div>
+          <img src="assets/img/mobile-clinic-car.jpg" alt="The Hearing Loss Solutions Mobile Hearing Clinic vehicle that brings hearing care to patients at home">
+          <div class="clinic-stops" aria-hidden="true">
+            <span><i></i>Sherman Oaks</span>
+            <span><i></i>Encino</span>
+            <span><i></i>Studio City</span>
+            <span><i></i>Beverly Hills</span>
+          </div>
+        </div>
       </div>
       <div>
         <span class="eyebrow" style="color:var(--orange-text); font-weight:600; text-transform:uppercase; letter-spacing:0.12em; font-size:0.82rem;" data-i18n="mobile.eyebrow">Care That Comes To You</span>
@@ -416,7 +414,7 @@
   </div>
 </section>
 
-<section>
+<section class="tight urgent-section">
   <div class="wrap">
     <div class="urgent-callout">
       <div class="u-icon"><svg viewBox="0 0 24 24"><path d="M12 2v10"/><circle cx="12" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M4 20h16"/></svg></div>
@@ -516,36 +514,6 @@
   </div>
 </section>
 
-<section class="sand">
-  <div class="wrap">
-    <div class="promo-card">
-      <div>
-        <span class="eyebrow">Start Here</span>
-        <h2>Not Sure Whether Your Hearing Has Changed?</h2>
-        <p>
-          Most people wait years before getting their hearing checked, usually because the change is gradual enough to explain away. Our online hearing check asks the eight questions we ask in the office, then tells you plainly whether a full evaluation makes sense for you.
-        </p>
-        <p>
-          It is free, it takes about two minutes, and nothing is submitted anywhere. Your answers stay in your browser.
-        </p>
-        <div class="hero-actions">
-          <a href="hearing-check.html" class="btn btn-primary">Take the Hearing Check</a>
-          <a href="contact.html" class="btn btn-ghost">Book an Evaluation Instead</a>
-        </div>
-      </div>
-      <div class="promo-visual">
-        <div class="pv-num">2 min</div>
-        <div class="pv-label">Eight questions, one clear answer</div>
-        <ul class="pv-list">
-          <li>Built from the questions Dr. Cohen asks at intake</li>
-          <li>Flags tinnitus, noise exposure, and balance concerns</li>
-          <li>Points you to the right next step, not a sales pitch</li>
-          <li>No email required and nothing stored</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Video. Renders as a designed feature until real footage lands; drop a
      YouTube embed into .video-frame and the pending plate is replaced.
@@ -598,6 +566,48 @@
           She is a designated Lenire tinnitus provider, a 2025 Marquis Who's Who honored listee, and an active educator who lectures on tinnitus, hearing loss, and brain injury-related auditory issues.
         </p>
         <a href="providers.html" class="alt-link">Meet Dr. Cohen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cred-ribbon">
+  <div class="wrap">
+    <div class="cred-ribbon-grid">
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.6-.8z"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Marquis Who's Who</div>
+          <div class="cred-sub">2025 Honored Listee</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Au.D., CH-TM, CBIS</div>
+          <div class="cred-sub">Doctor of Audiology</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0v6a6 6 0 0 1-12 0z"/><path d="M9 12a3 3 0 0 1 6 0"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Designated Lenire Provider</div>
+          <div class="cred-sub">FDA-cleared tinnitus therapy</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Practicing Since 2001</div>
+          <div class="cred-sub">Sherman Oaks office since 2014</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div class="cred-mark"><svg viewBox="0 0 24 24"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div>
+        <div class="cred-body">
+          <div class="cred-title">Farsi, Spanish, English</div>
+          <div class="cred-sub">Multilingual care, ASL by appointment</div>
+        </div>
       </div>
     </div>
   </div>
