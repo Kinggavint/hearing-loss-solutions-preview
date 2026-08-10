@@ -7,9 +7,6 @@
   --primary-tint: #FFF1E9;
   --cta: #C3181E;            /* her CTA red                             6.4:1 */
   --cta-deep: #A0060A;
-  --green: #81D742;          /* Desyncra accent - fills/rules ONLY            */
-  --green-deep: #4F8C22;     /* Desyncra green as type/icon             4.6:1 */
-  --green-tint: #F2FBEA;
   --gold: #F8C90E;
   --amber: #C67A2C;
   --amber-deep: #8A5312;
@@ -29,7 +26,7 @@
   /* Airier neutrals: large surfaces sit on sand/mist so the amber accents
      stay accents instead of washing whole sections. */
   --sand: #FFF6EE;
-  --mist: #F3FAEB;   /* soft Desyncra-green band for variety */
+  --mist: #FFF6EE;   /* warm neutral until the real brand green arrives */
   --line-soft: #EFE7D8;
 
   --shadow-sm: 0 1px 2px rgba(74, 50, 22, 0.05), 0 4px 14px rgba(74, 50, 22, 0.06);
@@ -674,8 +671,8 @@ section.deep .section-head p { color: rgba(255,255,255,0.85); }
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 4px var(--green-tint);
+  background: var(--primary);
+  box-shadow: 0 0 0 4px var(--cream-warm);
 }
 
 /* Footer */
@@ -2026,10 +2023,10 @@ textarea:focus-visible {
 }
 .carousel-quote .review-source svg { width: 16px; height: 16px; }
 
-/* --- Desyncra green accent rule ------------------------------------------ */
+/* --- Accent rule (awaiting the real Desyncra green) ---------------------- */
 .accent-rule {
   width: 68px; height: 5px;
-  background: var(--green);
+  background: var(--primary);
   border-radius: 999px;
   margin: 0.9rem auto 1.4rem;
 }
@@ -2317,7 +2314,7 @@ section > .wrap { position: relative; z-index: 1; }
 .deco-ripple-r {
   right: -140px; top: 46%; transform: translateY(-50%);
   width: 460px; height: 600px;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='600' viewBox='0 0 460 600'><g fill='none' stroke='%234F8C22' stroke-width='2.5'><circle cx='460' cy='300' r='70'/><circle cx='460' cy='300' r='122'/><circle cx='460' cy='300' r='174'/><circle cx='460' cy='300' r='226'/><circle cx='460' cy='300' r='278'/><circle cx='460' cy='300' r='330'/><circle cx='460' cy='300' r='382'/><circle cx='460' cy='300' r='434'/></g></svg>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='460' height='600' viewBox='0 0 460 600'><g fill='none' stroke='%23C67A2C' stroke-width='2.5'><circle cx='460' cy='300' r='70'/><circle cx='460' cy='300' r='122'/><circle cx='460' cy='300' r='174'/><circle cx='460' cy='300' r='226'/><circle cx='460' cy='300' r='278'/><circle cx='460' cy='300' r='330'/><circle cx='460' cy='300' r='382'/><circle cx='460' cy='300' r='434'/></g></svg>");
   opacity: calc(0.14 * var(--deco-strength));
 }
 .deco-wave-b {
@@ -2370,3 +2367,124 @@ section:has(> .deco) { position: relative; }
 
 /* Dots were the least useful motif and the most likely to sit behind copy. */
 .deco-dots { display: none; }
+
+
+/* ==========================================================================
+   FLOW PASS
+   Gavin: "it feels very divided, like a bunch of different sections" - where
+   Peachtree reads as one continuous page.
+
+   The cause was that almost every band painted its own opaque rectangle, so
+   the eye counted eight stacked boxes. The fix is to stop sections owning
+   backgrounds at all: the PAGE carries one slow warm gradient, sections go
+   transparent on top of it, and the decorative ripples run down a single
+   document-height layer so a motif can start in one band and finish in the
+   next. Deliberate colour moments (Lenire, brand partners, stats, final CTA)
+   are kept - those are meant to punctuate.
+   ========================================================================= */
+
+body {
+  position: relative;
+  background: linear-gradient(180deg,
+    #FFFFFF 0%, #FFFAF6 9%, #FFF4EC 18%, #FFFAF6 27%,
+    #FFFFFF 36%, #FFF6EF 47%, #FFFBF8 57%,
+    #FFFFFF 66%, #FFF4EC 78%, #FFFAF6 88%, #FFFFFF 100%);
+  background-attachment: scroll;
+}
+
+/* Sections stop painting their own rectangles. */
+section.sand, section.mist, section.cream,
+section.tight:not(.deep):not(.stats-band) { background: transparent; }
+
+/* Hard rules between bands were doing most of the "divided" work. */
+.spotlight-section { background: transparent; border-top: none; border-bottom: none; }
+.trust-check-strip { border-bottom: none; background: transparent; }
+.cred-ribbon { border-top: none; border-bottom: none; background: transparent; }
+.trust-strip { border-top: none; border-bottom: none; background: transparent; }
+.hero { border-bottom: none; }
+
+/* Colour moments that stay - but their edges now dissolve into the page
+   instead of stopping on a line. */
+section.deep {
+  background: linear-gradient(180deg,
+    rgba(255,241,233,0) 0%, #FFF1E9 14%, #FFE7D8 50%, #FFF1E9 86%, rgba(255,241,233,0) 100%);
+  border-top: none;
+  border-bottom: none;
+}
+.lenire-band {
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 26px, #000 calc(100% - 26px), transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 26px, #000 calc(100% - 26px), transparent 100%);
+}
+
+/* One rhythm for the whole page rather than each band choosing its own. */
+section { padding: clamp(3.25rem, 5.5vw, 5rem) 0; }
+section.tight { padding: clamp(2.25rem, 3.5vw, 3.25rem) 0; }
+
+/* --- Document-height decoration ------------------------------------------
+   The per-section .deco layers were clipped at every boundary, which
+   reinforced the division. This layer spans the whole page, so a ripple can
+   cross from one band into the next and visually stitch them together. */
+.page-deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.page-deco > span {
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 76%);
+          mask-image: radial-gradient(ellipse at center, #000 40%, transparent 76%);
+}
+.pd-l { background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='620' height='800' viewBox='0 0 620 800'><g fill='none' stroke='%23ED6A30' stroke-width='2.5'><circle cx='0' cy='400' r='90'/><circle cx='0' cy='400' r='152'/><circle cx='0' cy='400' r='214'/><circle cx='0' cy='400' r='276'/><circle cx='0' cy='400' r='338'/><circle cx='0' cy='400' r='400'/><circle cx='0' cy='400' r='462'/><circle cx='0' cy='400' r='524'/><circle cx='0' cy='400' r='586'/></g></svg>"); }
+.pd-r { background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='620' height='800' viewBox='0 0 620 800'><g fill='none' stroke='%23C67A2C' stroke-width='2.5'><circle cx='620' cy='400' r='90'/><circle cx='620' cy='400' r='152'/><circle cx='620' cy='400' r='214'/><circle cx='620' cy='400' r='276'/><circle cx='620' cy='400' r='338'/><circle cx='620' cy='400' r='400'/><circle cx='620' cy='400' r='462'/><circle cx='620' cy='400' r='524'/><circle cx='620' cy='400' r='586'/></g></svg>"); }
+
+/* Staggered down the page, alternating sides, each one crossing a boundary. */
+.page-deco .a { left: -300px; top: 6%;  width: 620px; height: 800px; opacity: calc(0.10 * var(--deco-strength)); }
+.page-deco .b { right: -320px; top: 19%; width: 620px; height: 800px; opacity: calc(0.09 * var(--deco-strength)); }
+.page-deco .c { left: -340px; top: 37%; width: 560px; height: 720px; opacity: calc(0.08 * var(--deco-strength)); }
+.page-deco .d { right: -300px; top: 55%; width: 620px; height: 800px; opacity: calc(0.09 * var(--deco-strength)); }
+.page-deco .e { left: -320px; top: 74%; width: 560px; height: 720px; opacity: calc(0.08 * var(--deco-strength)); }
+
+/* Page content sits above the decorative field. */
+body > header, body > section, body > footer, body > .lang-bar,
+body > .util-bar, body > .action-bar { position: relative; z-index: 1; }
+
+@media (max-width: 900px) { .page-deco { display: none; } }
+
+/* This band used to be dark teal with white text. It is a light peach band now,
+   so the inherited white heading and 85%-white paragraph were rendering almost
+   invisibly. (My contrast audit missed it because it skips any element whose
+   background resolves to a gradient - fixed in the checker too.) */
+section.deep .section-head .eyebrow { color: var(--cta); }
+section.deep h2 { color: var(--primary-deep); }
+section.deep .section-head p { color: var(--muted); }
+section.deep h1, section.deep h3, section.deep h4 { color: var(--brown); }
+
+/* The stats band was a dark slab with white text and gold numerals. My palette
+   pass recoloured its background to a light peach gradient but left the text
+   light, leaving it at ~1.2:1 - effectively unreadable. Keeping the band light
+   (better for page flow) and darkening the type instead. */
+.stats-band { color: var(--ink); }
+.stats-band .stat-item .stat-num { color: var(--primary-deep); }
+.stats-band .stat-item .stat-label { color: var(--muted); }
+.stats-band::before { background: radial-gradient(ellipse 60% 90% at 88% 10%, rgba(237, 106, 48, 0.10), transparent 62%); }
+
+/* Video thumb captions sat right on the AA boundary over the scrim. */
+.video-thumb::after {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.30) 48%, transparent 72%);
+}
+
+/* White copy on the orange CTA band was 3.2-3.6:1 - fine for the big heading,
+   short of AA for the paragraph and links. Deepening the band to her CTA red
+   takes white to 6.4:1 without leaving the palette. */
+.cta-band {
+  background: linear-gradient(135deg, var(--cta) 0%, var(--cta-deep) 100%);
+}
+.cta-band p { color: rgba(255, 255, 255, 0.96); }
+.cta-band a:not(.btn) { color: var(--white); text-decoration: underline; }
+.cta-band .btn { background: var(--white); color: var(--cta); }
+.cta-band .btn:hover { background: #FFF1E9; color: var(--cta-deep); }
